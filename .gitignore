@@ -1,0 +1,33 @@
+# General junk
+.DS_Store
+.htaccess
+Thumbs.db
+
+# Dev files
+dist
+bower_components
+node_modules
+npm-debug.log
+*.css.map
+
+# WP Content
+wp-config.php
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+
+# Select Plugins
+wp-content/plugins/*
+!wp-content/plugins/index.php
+!wp-content/plugins/advanced-custom-fields-pro
+
+# Select Themes
+wp-content/themes/*
+!wp-content/themes/index.php
+
+# Keep Main theme for obvious reasons
+!wp-content/themes/ERS
+
+# Keeping twentyfifteen for safety net
+!wp-content/themes/twentyfifteen
+
