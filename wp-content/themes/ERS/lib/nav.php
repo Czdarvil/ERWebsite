@@ -57,7 +57,7 @@ class SageNavWalker extends \Walker_Nav_Menu {
     $element->is_dropdown = ((!empty($children_elements[$element->ID]) && (($depth + 1) < $max_depth || ($max_depth === 0))));
 
     if ($element->is_dropdown) {
-      $element->classes[] = 'dropdown';
+      $element->classes[] = $depth === 0 ? 'dropdown' : 'dropdown-submenu';
 
       foreach ($children_elements[$element->ID] as $child) {
         if ($child->current_item_parent || Utils\url_compare($this->archive, $child->url)) {
@@ -113,7 +113,7 @@ function nav_menu_args($args = '') {
   }
 
   if (!$args['depth']) {
-    $nav_menu_args['depth'] = 2;
+    $nav_menu_args['depth'] = 3;
   }
 
   return array_merge($args, $nav_menu_args);
