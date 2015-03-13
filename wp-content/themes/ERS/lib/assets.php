@@ -95,6 +95,8 @@ function bower_map_to_cdn($dependency, $fallback) {
 }
 
 function assets() {
+  wp_enqueue_style('font_google_pt_sans', 'https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic', false, null);
+  wp_enqueue_style('font_fontawesome', asset_path('fonts/font-awesome.min.css'), false, null);
   wp_enqueue_style('sage_css', asset_path('styles/main.css'), false, null);
 
   /**
