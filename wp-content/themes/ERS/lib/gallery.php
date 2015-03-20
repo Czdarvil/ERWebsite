@@ -47,7 +47,14 @@ function gallery($attr) {
     'size'       => 'thumbnail',
     'include'    => '',
     'exclude'    => '',
-    'link'       => ''
+    'link'       => '',
+    'type'       => '',
+    'interval'   => '5000',
+    'pause'      => 'hover',
+    'wrap'       => true,
+    'keyboard'   => true,
+    'indicators' => true,
+    'controls'   => true
   ], $attr));
 
   $id = intval($id);
@@ -84,35 +91,87 @@ function gallery($attr) {
   }
 
   $unique = (get_query_var('page')) ? $instance . '-p' . get_query_var('page'): $instance;
-  $output = '<div class="gallery gallery-' . $id . '-' . $unique . '">';
+  if ($type == 'carousel') {
+    $output = '<div id="carousel_gallery-'.$instance.'" class="carousel slide carousel-gallery" data-ride="carousel" data-interval="'.$interval.'" data-pause="'.$pause.'" data-wrap="'.$wrap.'" data-keyboard="'.$keyboard.'">';
 
-  $i = 0;
-  foreach ($attachments as $id => $attachment) {
-    switch($link) {
-      case 'file':
-        $image = wp_get_attachment_link($id, $size, false, false);
-        break;
-      case 'none':
-        $image = wp_get_attachment_image($id, $size, false, ['class' => 'thumbnail img-thumbnail']);
-        break;
-      default:
-        $image = wp_get_attachment_link($id, $size, true, false);
-        break;
+      if( $indicators === true ) {
+        $output .= '<ol class="carousel-indicators">';
+        $indicator = 0;
+        foreach ( $attachments as $id ) {
+          $active = $indicator == 0 ? 'active': '';
+          $output .= '<li data-target="#carousel_gallery-'.$instance.'" data-slide-to="'.$indicator.'" class="'.$active.'"></li>';
+          $indicator++;
+        }
+        $output .= '</ol>';
+      }
+
+      $slide_position = 0;
+      $output .= '<div class="carousel-inner">';
+      foreach ($attachments as $id => $attachment) {
+        $active = $slide_position == 0 ? 'active': '';
+
+        switch($link) {
+          case 'file':
+            $image = wp_get_attachment_link($id, $size, false, false);
+            break;
+          case 'none':
+            $image = wp_get_attachment_image($id, $size, false, false);
+            break;
+          default:
+            $image = wp_get_attachment_link($id, $size, true, false);
+            break;
+        }
+
+        $output .= '<div class="item '.$active.'">'.$image;
+        if (trim($attachment->post_excerpt)) {
+          $output .= '<div class="carousel-caption">' . wptexturize($attachment->post_excerpt) . '</div>';
+        }
+        $output .='</div>';
+
+        $slide_position++;
+      }
+      $output .= '</div>'; // .carousel-inner
+
+      if ($controls == true ) {
+        $output .= '<a class="carousel-arrow carousel-arrow-prev" href="#carousel_gallery-'.$instance.'" data-slide="prev">
+                      <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-arrow carousel-arrow-next" href="#carousel_gallery-'.$instance.'" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>'; // controls
+      }
+    $output .= '</div>'; // .carousel.slide
+  } else {
+    $output = '<div class="gallery gallery-' . $id . '-' . $unique . '">';
+
+    $i = 0;
+    foreach ($attachments as $id => $attachment) {
+      switch($link) {
+        case 'file':
+          $image = wp_get_attachment_link($id, $size, false, false);
+          break;
+        case 'none':
+          $image = wp_get_attachment_image($id, $size, false, ['class' => 'thumbnail img-thumbnail']);
+          break;
+        default:
+          $image = wp_get_attachment_link($id, $size, true, false);
+          break;
+      }
+      $output .= ($i % $columns == 0) ? '<div class="row gallery-row">': '';
+      $output .= '<div class="' . $grid .'">' . $image;
+
+      if (trim($attachment->post_excerpt)) {
+        $output .= '<div class="caption hidden">' . wptexturize($attachment->post_excerpt) . '</div>';
+      }
+
+      $output .= '</div>';
+      $i++;
+      $output .= ($i % $columns == 0) ? '</div>' : '';
     }
-    $output .= ($i % $columns == 0) ? '<div class="row gallery-row">': '';
-    $output .= '<div class="' . $grid .'">' . $image;
 
-    if (trim($attachment->post_excerpt)) {
-      $output .= '<div class="caption hidden">' . wptexturize($attachment->post_excerpt) . '</div>';
-    }
-
+    $output .= ($i % $columns != 0 ) ? '</div>' : '';
     $output .= '</div>';
-    $i++;
-    $output .= ($i % $columns == 0) ? '</div>' : '';
   }
-
-  $output .= ($i % $columns != 0 ) ? '</div>' : '';
-  $output .= '</div>';
 
   return $output;
 }

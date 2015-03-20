@@ -202,7 +202,7 @@ Last change:    18/02/2015
 
 /* ===== Navbar ===== */
 
-@navbar-height: 65px;
+@navbar-height: 45px; // 65px default
 @navbar-default-bg: white;
 @navbar-default-border: @new-gray-darker;
 @navbar-default-link-color: #999;
@@ -214,8 +214,11 @@ Last change:    18/02/2015
 
 .navbar-default {
   .box-shadow(0 0 16px 0 rgba(0, 0, 0, .175));
+  border: 0;
 }
-
+.navbar-collapse {
+  border-top: 0;
+}
 .admin-bar .navbar-fixed-top {
   top: 32px;
 }
@@ -228,17 +231,27 @@ Last change:    18/02/2015
   font-family: @headings-font-family;
   font-weight: 400;
   font-size: 22px;
+  padding: 4px 0;
+  max-width: 50%;
 
   > img {
-    height: 28px;
     width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 37px;
   }
+}
+.sub-nav {
+  background: #111;
 }
 
 /*** Navbar Links ***/
-
 .navbar-default .navbar-nav > li > a {
   text-transform: uppercase;
+  color: #ccc;
+  &:hover {
+    color: #fff;
+  }
 }
 
 @media (min-width: @grid-float-breakpoint) {
@@ -249,8 +262,24 @@ Last change:    18/02/2015
     height: 0;
     left: 0;
     width: 100%;
-    border-top: 3px solid @primary-color;
-    .transition(top 100ms);
+    border-top: 0px solid @er-red;
+    .transition(all 100ms);
+  }
+  // .navbar-default .navbar-nav > li:nth-child(4n+1) > a:before {
+  //   border-top-color: @er-red;
+  // }
+  // .navbar-default .navbar-nav > li:nth-child(4n+2) > a:before {
+  //   border-top-color: @er-orange;
+  // }
+  // .navbar-default .navbar-nav > li:nth-child(4n+3) > a:before {
+  //   border-top-color: @er-gold;
+  // }
+  // .navbar-default .navbar-nav > li:nth-child(4n+4) > a:before {
+  //   border-top-color: @er-yellow;
+  // }
+
+  .navbar-default .navbar-nav > li:hover > a:hover:before {
+    border-top-width:3px;
   }
   .navbar-default .navbar-nav > li > a:hover:before,
   .navbar-default .navbar-nav > li > a:focus:before {
@@ -259,18 +288,61 @@ Last change:    18/02/2015
   .navbar-default .navbar-nav > .active > a,
   .navbar-default .navbar-nav > .active > a:hover,
   .navbar-default .navbar-nav > .active > a:focus {
-    padding-top: 19.5px;
-    border-top: 3px solid @primary-color;
+    color: #fff;
+    // padding-top: 9.5px;
+    // border-top: 3px solid @primary-color;
   }
   .navbar-default .navbar-nav > .active > a:before,
   .navbar-default .navbar-nav > .active > a:hover:before,
   .navbar-default .navbar-nav > .active > a:focus:before {
-    top: -3px;
+    top: 0px;
+    border-top-width: 3px;
   }
 }
 
-/*** Navbar Toggle ***/
+@media (max-width: @grid-float-breakpoint-max) {
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: #ccc;
+  }
 
+  .navbar-default .navbar-nav>.active>a,
+  .navbar-default .navbar-nav>.active>a:hover,
+  .navbar-default .navbar-nav>.active>a:focus,
+  .navbar-default .navbar-nav .open .dropdown-menu>.active>a,
+  .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: #fff;
+  }
+}
+
+.navbar-default .navbar-nav > li:nth-child(4n+1) > a:before {
+  border-color: @er-red;
+}
+.navbar-default .navbar-nav > li:nth-child(4n+2) > a:before {
+  border-color: @er-orange;
+}
+.navbar-default .navbar-nav > li:nth-child(4n+3) > a:before {
+  border-color: @er-gold;
+}
+.navbar-default .navbar-nav > li:nth-child(4n+4) > a:before {
+  border-color: @er-yellow;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
+  color: #fff;
+}
+
+/*** Navbar Toggle ***/
+.navbar-default .navbar-toggle {
+  margin-right: 0;
+  margin-left: 4px;
+}
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
   border-color: #bbb;
@@ -293,6 +365,17 @@ Last change:    18/02/2015
   border-top: 3px solid @secondary-color;
   border-radius: 0 0 4px 4px;
   .box-shadow(0 3px 6px rgba(0, 0, 0, .175));
+}
+@media screen and (max-width: @screen-sm-max) {
+  .navbar-nav > li #navbar-search-box {
+    display: block !important;
+    visibility: visible !important;
+    position: static;
+    width: auto;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
 }
 .navbar-nav > #navbar-search > a > i.fa-times {
   margin: 0 1px;
@@ -658,6 +741,26 @@ a.carousel-arrow-next {
   font-family: @font-family-sans-serif;
 }
 
+.headline-icon {
+  i {
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 15px;
+    background: #6f1011;
+    color: white;
+    vertical-align: middle;
+  }
+  span {
+    vertical-align: middle;
+  }
+}
+.modal .headline-icon {
+  margin: 0;
+}
 /* ===== Categories List ===== */
 
 .b-categories-list {
@@ -796,14 +899,26 @@ a.carousel-arrow-next {
 
 /* ===== Features List ===== */
 
+.check-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.check-list > li:before {
+  content: "\f00c";
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-right: 10px;
+  color: @er-green;
+}
+
 .ft-list {
   list-style-type: none;
   padding-left: 0;
 }
 .ft-list > li:before {
-  content: "\f00c";
+  content: "\f138";
   font-family: FontAwesome;
   display: inline-block;
   margin-right: 10px;
-  color: #4dc788;
+  color: @er-orange;
 }

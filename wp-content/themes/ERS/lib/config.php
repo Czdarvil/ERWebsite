@@ -57,17 +57,56 @@ function display_sidebar() {
        * ['is_post_type_archive', ['foo', 'bar', 'baz']]
        *
        */
-      [
-        'is_404',
-        'is_front_page',
-        ['is_page_template', 'template-custom.php']
-      ]
+      // [
+      //   'is_404',
+      //   'is_front_page',
+      //   ['is_page_template', 'template-custom.php']
+      // ]
     );
 
     $display = apply_filters('sage/display_sidebar', $conditionalCheck->result);
   }
 
-  return $display;
+  return !$display;
+}
+
+/**
+ * Checks for pages that should have a sidebar.
+ *
+ * Also sets defaults for pages that
+ * don't have an edit screen to change
+ * the setting. Such as archives and search.
+ *
+ * @return sidebar class else false if no sidebar
+ *
+ */
+function page_should_have_sidebar() {
+  if ( is_page() || is_single() ) {
+    if ( get_field( 'page_layout' ) == 'left_sidebar' || get_field( 'page_layout' ) == 'right_sidebar' ) {
+      return get_field('page_layout');
+    }
+  }
+
+  if ( is_single() && get_field('page_layout') == 'default' ) {
+    return 'right_sidebar';
+  }
+
+  if ( is_post_type_archive('employee') ||
+       is_post_type_archive('module') ||
+       is_post_type_archive('product') ) {
+
+    return 'left_sidebar isotope-filters';
+  }
+
+  if ( is_search() ) {
+    return 'right_sidebar';
+  }
+
+  if ( is_category() ) {
+    return 'right_sidebar';
+  }
+
+  return false;
 }
 
 /**

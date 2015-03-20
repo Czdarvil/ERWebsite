@@ -1,7 +1,28 @@
 // Grid system
+
+.left_sidebar,
+.right_sidebar {
+  .wrapper {
+    .container;
+  }
+  .page-content{
+    .row;
+  }
+  .main .container {
+    width: auto !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .main {
-  .make-sm-column(@main-sm-columns);
-  .sidebar-primary & {
+  .left_sidebar & {
+    .make-sm-column(@main-sm-columns - @sidebar-sm-columns);
+    @media (min-width: @screen-sm-min) {
+      float: right !important;
+    }
+  }
+  .right_sidebar & {
     .make-sm-column(@main-sm-columns - @sidebar-sm-columns);
   }
 }

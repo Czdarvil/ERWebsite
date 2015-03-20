@@ -19,9 +19,17 @@ html, body {
   min-height: 100%;
   height: auto !important; /* for older versions of IE */
   height: 100%;
-  padding-top: 95px; /* navbar height + margin */
-  margin-bottom: -379px; /* footer height + margin */
-  padding-bottom: 379px; /* footer height + margin */
+  // padding-top: 95px; /* navbar height + margin */
+  margin-bottom: -330px;
+  padding-bottom: 316px;
+}
+.page-header-wrapper {
+  padding-top: 120px;
+}
+@media screen and (max-width: @screen-sm-max) {
+  .page-header-wrapper {
+    padding-top: 75px;
+  }
 }
 
 /* ===== Homepage Slider ===== */
@@ -175,12 +183,14 @@ html, body {
 
 /* ===== Home Services ===== */
 
-.home-services {
+.home-services,
+.services-bar {
   margin-bottom: 20px;
   background: @er-gray;
   color: white;
 }
-.home-services {
+.home-services,
+.services-bar {
   .lead {
     margin: 0;
     line-height: 93px;
@@ -196,9 +206,11 @@ html, body {
     padding: 20px 3px;
     border-right: 1px solid @er-gray - #111111;
     text-align: center;
-    cursor: pointer;
+    // cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
+
     .transition(width 300ms);
     &:first-child {
       border-left: 1px solid @er-gray - #111111;
@@ -225,14 +237,34 @@ html, body {
       display: inline-block;
     }
   }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.cover-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: block;
+  z-index: 9;
+  text-decoration: none;
+  &:hover, &:focus, &:active {
+    text-decoration: none;
+  }
 }
 @media (max-width: @screen-sm-max) {
-  .home-services ul {
+  .home-services ul,
+  .services-bar ul  {
     text-align: center;
   }
 }
 @media (max-width: @screen-xs-max) {
-  .home-services li {
+  .home-services li,
+  .services-bar li {
     display: block;
     float: none;
     width: 100%;
@@ -242,7 +274,8 @@ html, body {
       border-left: 0;
     }
   }
-  .home-services ul:hover li {
+  .home-services ul:hover li,
+  .services-bar ul:hover li {
     width: 100%;
     &:hover {
       width: 100%;
@@ -365,12 +398,69 @@ html, body {
   }
 }
 
+/* ===== Colored Tile ===== */
+.colored-tile {
+  border-radius: 3px;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 30px;
+  color: #fff;
+
+  h4 {
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+  h5 {
+    margin: 0;
+  }
+  .icon > img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &.bg-theme-yellow,
+  &.bg-theme-gold {
+    color: #333;
+  }
+}
+
+[data-toggle="modal"] {
+  cursor: pointer;
+}
+.user-avatar {
+  cursor: pointer
+}
+
+/* ===== Module Tile ===== */
+.module-tile {
+  cursor: pointer;
+
+  .icon {
+    text-align: center;
+  }
+  .icon >img {
+    max-width: 50%;
+  }
+}
+/* ===== Product Tile ===== */
+.product-tile {
+  .icon {
+    text-align: center;
+  }
+  .icon >img {
+    max-width: 100%;
+  }
+}
+
 /* ===== Feedback ===== */
 
 .feedbacks {
   margin: 0 0 20px;
   padding: 20px 0 50px;
-  background: @new-gray url(../img/image-1.png) no-repeat center center;
+  background-color: @new-gray;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   border: 1px solid #ccc;
 }
@@ -378,9 +468,15 @@ html, body {
   margin: 20px 0 10px;
 }
 .feedback {
-  > i {
+  > i,
+  > img {
     float: left;
     margin-right: 15px;
+    width: 28px;
+    height: 28px;
+  }
+  > img {
+    border-radius: 50%;
   }
   > div {
     position: relative;
@@ -403,6 +499,11 @@ html, body {
       height: 0;
       border-top: 20px solid white;
       border-left: 30px solid transparent;
+    }
+    >.cite {
+      font-weight: bold;
+      display: block;
+      margin-top: 1em;
     }
   }
 }
@@ -511,19 +612,47 @@ html, body {
 
 /* ===== About Us :: Option 1 ===== */
 
-.b-team-photo {
+.b-team-photo,
+.hero-image {
   height: 500px;
+  height: 50vh;
   margin: -30px 0 0;
-  background: gray url(../img/our-team.jpg) no-repeat center center fixed;
+  background-color: gray;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
 }
-.b-about-block {
+.b-about-block,
+.intro-block {
   padding: 50px 0;
-  background: @new-gray;
+  background-color: transparent;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-weight: 300;
   font-size: 21px;
   line-height: 1.4;
   text-align: center;
+  .feature-image {
+    text-align: center;
+    margin: 150px auto 40px;
+    width: 33%;
+  }
+  .feature-image img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media screen and (max-width: @screen-md-max) {
+  .b-about-block,
+  .intro-block {
+    background-position: center top;
+    background-size: contain;
+    .feature-image {
+      margin-top: 50px;
+    }
+  }
 }
 
 /* ===== Help Center ===== */

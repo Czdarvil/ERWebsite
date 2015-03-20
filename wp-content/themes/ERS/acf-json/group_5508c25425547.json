@@ -1,0 +1,99 @@
+{
+    "key": "group_5508c25425547",
+    "title": "Module details",
+    "fields": [
+        {
+            "key": "field_5508c804dc48a",
+            "label": "Category Color Override",
+            "name": "category_color_override",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "Select the color for this module when it's displayed in a grid. This overrides the predefined category color.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Use Category Color",
+                "bg-theme-brown": "<span style=\"background-color: #543425; width: 2em; height: 2em; display: inline-block;\" title=\"Brown\">&nbsp;<\/span>",
+                "bg-theme-maroon-dark": "<span style=\"background-color: #420A0A; width: 2em; height: 2em; display: inline-block;\" title=\"Dark Maroon\">&nbsp;<\/span>",
+                "bg-theme-maroon": "<span style=\"background-color: #851314; width: 2em; height: 2em; display: inline-block;\" title=\"Maroon\">&nbsp;<\/span>",
+                "bg-theme-red": "<span style=\"background-color: #CE171F; width: 2em; height: 2em; display: inline-block;\" title=\"Red\">&nbsp;<\/span>",
+                "bg-theme-orange": "<span style=\"background-color: #F27A21; width: 2em; height: 2em; display: inline-block;\" title=\"Orange\">&nbsp;<\/span>",
+                "bg-theme-gold": "<span style=\"background-color: #FAA61A; width: 2em; height: 2em; display: inline-block;\" title=\"Gold\">&nbsp;<\/span>",
+                "bg-theme-yellow": "<span style=\"background-color: #F4D500; width: 2em; height: 2em; display: inline-block;\" title=\"Yellow\">&nbsp;<\/span>",
+                "bg-theme-green": "<span style=\"background-color: #3aa000; width: 2em; height: 2em; display: inline-block;\" title=\"Green\">&nbsp;<\/span>",
+                "bg-theme-blue": "<span style=\"background-color: #437CBD; width: 2em; height: 2em; display: inline-block;\" title=\"Blue\">&nbsp;<\/span>"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "default",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_5509c1fb99b86",
+            "label": "Module Icon Image",
+            "name": "icon_image",
+            "prefix": "",
+            "type": "image",
+            "instructions": "Image representing this module",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_550c7cbab4ff6",
+            "label": "Description",
+            "name": "module_description",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 75,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "module"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "modified": 1426881741
+}

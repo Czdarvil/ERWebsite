@@ -23,6 +23,13 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        $('#navbar-search > a').on('click', function() {
+          $('#navbar-search > a > i').toggleClass('fa-search fa-times');
+          $("#navbar-search-box").toggleClass('show hidden animated fadeInUp');
+          return false;
+        });
+
+        $(".main").fitVids();
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -41,6 +48,23 @@
     'about_us': {
       init: function() {
         // JavaScript to be fired on the about us page
+      }
+    },
+    'isotope_filters': {
+      init: function() {
+        // init Isotope
+        var $container = $('#isotope-container').imagesLoaded( function() {
+          $container.isotope({
+            itemSelector: '.isotope-item',
+            layoutMode: 'fitRows'
+          });
+        });
+        // filter items on button click
+        $('#filters a').on('click', function(e) {
+          var filterValue = $(this).attr('data-filter');
+          $container.isotope({ filter: filterValue });
+          return false;
+        });
       }
     }
   };

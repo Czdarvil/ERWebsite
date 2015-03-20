@@ -3,6 +3,7 @@
 namespace Roots\Sage\Init;
 
 use Roots\Sage\Assets;
+use Roots\Sage\Utils;
 
 /**
  * Theme setup
@@ -38,6 +39,8 @@ function setup() {
 
   // Tell the TinyMCE editor to use a custom stylesheet
   add_editor_style(Assets\asset_path('styles/editor-style.css'));
+
+  add_image_size( 'gallery_carousel', 485, 485, true );
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
@@ -57,10 +60,111 @@ function widgets_init() {
   register_sidebar([
     'name'          => __('Footer', 'sage'),
     'id'            => 'sidebar-footer',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'before_widget' => '<section class="widget %1$s %2$s col-sm-4">',
     'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>'
   ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
+
+
+function add_custom_post_types() {
+  /**
+   * Employees
+   */
+  Utils\new_post_type('employee', 'Employees', 'Employee', false, array(
+    'menu_icon' => 'dashicons-id',
+    'has_archive'   => 'employees'
+  ));
+  register_taxonomy( 'team', 'employee', array(
+    'label' => 'Teams',
+    'rewrite' => array( 'slug' => 'team' ),
+    // 'hierarchical' => 'true'
+  ));
+
+  /**
+   * Products
+   */
+  Utils\new_post_type('product', 'Products', 'Product', true, array(
+    'menu_icon' => 'dashicons-cart',
+    'has_archive' => 'products'
+  ));
+  register_taxonomy( 'type', 'product', array(
+    'label' => 'Product Types',
+    // 'rewrite' => array( 'slug' => 'type' ),
+    'rewrite' => false,
+    'public' => false,
+    'show_ui' => true,
+    'hierarchical' => true
+  ));
+
+  /**
+   * Product Modules
+   */
+  Utils\new_post_type('module', 'Modules', 'Module', true, array(
+    'menu_icon' => 'dashicons-screenoptions',
+    'has_archive' => 'modules'
+  ));
+  register_taxonomy( 'feature', 'module', array(
+    'label' => 'Features',
+    'rewrite' => false,
+    'hierarchical' => true,
+    'public' => false,
+    'show_ui' => true
+    // 'rewrite' => array( 'slug' => 'features' )
+  ));
+}
+add_action('init', __NAMESPACE__ . '\\add_custom_post_types');
+
+/**
+ * Link products and modules together using Posts 2 Posts plugin
+ *
+ * This allows when editing a module to assign products it belongs to
+ * and products
+ */
+function product_module_relationship() {
+  p2p_register_connection_type( array(
+    'name'     => 'product_modules',
+    'from'     => 'module',
+    'to'       => 'product',
+    'sortable' => 'any',
+    'admin_box' => array(
+      'context'  => 'side',
+      'priority' => 'default'
+    ),
+    'title'    => array(
+      'from' => 'Products that support this Module',
+      'to'   => 'Modules included in this product'
+    ),
+    'from_labels' => array(
+      'create' => 'Include Module'
+    ),
+    'to_labels' => array(
+      'create' => 'Include in Product'
+    )
+  ) );
+}
+add_action( 'p2p_init', __NAMESPACE__ . '\\product_module_relationship' );
+
+
+function add_search_to_primary_nav($items) {
+  $items .= '<li class="" id="navbar-search">
+  <a href="#" class="hidden-sm hidden-xs">
+    <i class="fa fa-search"></i>
+  </a>
+  <div class="hidden" id="navbar-search-box">
+    <form role="search" method="get" action="'.esc_url(home_url('/')).'">
+      <div class="input-group">
+        <input type="search" value="'.get_search_query().'" class="form-control" placeholder="Search" name="s">
+        <span class="input-group-btn">
+          <button class="search-submit btn btn-default" type="submit">Go!</button>
+        </span>
+      </div>
+    </form>
+  </div>
+</li>';
+
+return $items;
+}
+add_action( 'wp_nav_menu_primary-navigation_items', __NAMESPACE__ .'\\add_search_to_primary_nav' );

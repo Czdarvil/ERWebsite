@@ -31,10 +31,17 @@ Last change:    18/02/2015
 
 /*** Emergency Reporting Theme Colors ***/
 
+@er-brown: #543425;
+@er-dark-maroon: #420A0A;
 @er-maroon: #6f1011;
+@er-red: #CE171F;
 @er-orange: #f27a21;
+@er-gold: #FAA61A;
+@er-yellow: #F4D500;
+@er-green: #3AA000;
 @er-blue: #3C70AB;
 @er-gray: #333333;
+
 
 /*** Change the 2 values below to create new color schemes ***/
 
@@ -54,6 +61,37 @@ Last change:    18/02/2015
 }
 .bg-theme-secondary {
   background: @secondary-color;
+}
+
+.bg-theme-brown {
+  background-color: @er-brown;
+}
+.bg-theme-maroon-dark {
+  background-color: @er-dark-maroon;
+}
+.bg-theme-maroon {
+  background-color: @er-maroon;
+}
+.bg-theme-red {
+  background-color: @er-red;
+}
+.bg-theme-orange {
+  background-color: @er-orange;
+}
+.bg-theme-gold {
+  background-color: @er-gold;
+}
+.bg-theme-yellow {
+  background-color: @er-yellow;
+}
+.bg-theme-green {
+  background-color: @er-green;
+}
+.bg-theme-blue {
+  background-color: @er-blue;
+}
+.bg-theme-gray {
+  background-color: @er-gray;
 }
 
 /* ===== Helper Classes ===== */
@@ -167,4 +205,10 @@ hr.arrow-down {
 }
 .opacity-0 {
   .opacity(0);
+}
+
+/*** wp autop fix ***/
+div+br,
+p:empty {
+  display: none;
 }

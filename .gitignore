@@ -20,6 +20,12 @@ wp-content/*
 wp-content/plugins/*
 !wp-content/plugins/index.php
 !wp-content/plugins/advanced-custom-fields-pro
+!wp-content/plugins/advanced-custom-fields-font-awesome
+!wp-content/plugins/custom-sidebars
+!wp-content/plugins/mce-table-buttons
+!wp-content/plugins/posts-to-posts
+!wp-content/plugins/radio-buttons-for-taxonomies
+!wp-content/plugins/regenerate-thumbnails
 
 # Select Themes
 wp-content/themes/*

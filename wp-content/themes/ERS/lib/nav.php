@@ -120,3 +120,39 @@ function nav_menu_args($args = '') {
 }
 add_filter('wp_nav_menu_args', __NAMESPACE__ . '\\nav_menu_args');
 add_filter('nav_menu_item_id', '__return_null');
+
+
+
+function the_breadcrumbs($classes) {
+  global $post;
+
+  echo '<ul class="breadcrumb '.$classes.'">';
+    // Always have home as a link
+    echo '<li><a href="'.get_option('home').'">'.get_bloginfo('title').'</a></li>';
+
+    if ( is_page() ) {
+      // get all ancestors and generate links
+      $parents = array_reverse( get_post_ancestors( $post ) );
+      foreach ( $parents as $page ) {
+        echo '<li><a href="'.get_the_permalink($page).'">'.get_the_title($page).'</a></li>';
+      }
+    } elseif ( is_archive() ) {
+      echo '<li>'.get_the_archive_title().'</li>';
+    } elseif ( is_single() ) {
+      // if singular and has archive
+      // show archive link
+      $archive = get_post_type_archive_link( get_post_type() );
+      if ( $archive ) {
+        $type = get_post_type_object( get_post_type() );
+        echo '<li><a href="'.$archive.'">'.$type->labels->name.'</a></li>';
+      }
+
+    }
+
+    // Current single
+    if (is_single() || is_page() ) {
+      echo '<li>'.get_the_title().'</li>';
+    }
+
+  echo '</ul>';
+}
