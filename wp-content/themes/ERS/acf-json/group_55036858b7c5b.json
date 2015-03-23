@@ -2409,6 +2409,141 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "5510429b6aa70",
+                    "name": "app_store_links",
+                    "label": "App Store Links",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_551042ad6aa71",
+                            "label": "Stores",
+                            "name": "stores",
+                            "prefix": "",
+                            "type": "checkbox",
+                            "instructions": "Select app stores",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "itunes": "iTunes",
+                                "amazon": "Amazon",
+                                "google": "Google Play",
+                                "windows": "Windows"
+                            },
+                            "default_value": {
+                                "itunes": "itunes"
+                            },
+                            "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_551042fa6aa72",
+                            "label": "iTunes",
+                            "name": "itunes",
+                            "prefix": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_551042ad6aa71",
+                                        "operator": "==",
+                                        "value": "itunes"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5510430f6aa73",
+                            "label": "Amazon",
+                            "name": "amazon",
+                            "prefix": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_551042ad6aa71",
+                                        "operator": "==",
+                                        "value": "amazon"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_551043256aa74",
+                            "label": "Google Play",
+                            "name": "google",
+                            "prefix": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_551042ad6aa71",
+                                        "operator": "==",
+                                        "value": "google"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5510433d6aa75",
+                            "label": "Windows",
+                            "name": "windows",
+                            "prefix": "",
+                            "type": "url",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_551042ad6aa71",
+                                        "operator": "==",
+                                        "value": "windows"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -2444,5 +2579,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1426808059
+    "modified": 1427129212
 }
