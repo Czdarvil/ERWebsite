@@ -2411,6 +2411,212 @@
                     "max": ""
                 },
                 {
+                    "key": "55105498ab3af",
+                    "name": "pricing_inquiry",
+                    "label": "Pricing Inquiry",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_55108cf52a56c",
+                            "label": "Show Form",
+                            "name": "show_form",
+                            "prefix": "",
+                            "type": "true_false",
+                            "instructions": "You can hide the form if it's already being displayed on the page.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Show Inquiry Form?",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_551054aaab3b0",
+                            "label": "Form Intro",
+                            "name": "form_intro",
+                            "prefix": "",
+                            "type": "wysiwyg",
+                            "instructions": "Shown Above the Inquiry Form. Hidden after form submission.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_55108cf52a56c",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1
+                        },
+                        {
+                            "key": "field_551092895d509",
+                            "label": "Results Intro",
+                            "name": "results_intro",
+                            "prefix": "",
+                            "type": "wysiwyg",
+                            "instructions": "Shown above the pricing results",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 100,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1
+                        },
+                        {
+                            "key": "field_551086bc4a008",
+                            "label": "Most Popular Label",
+                            "name": "most_popular",
+                            "prefix": "",
+                            "type": "true_false",
+                            "instructions": "If Checked, product 2 will be labeled as \"Most Popular\", uncheck to hide the label.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Show Most Popular Label",
+                            "default_value": 1
+                        },
+                        {
+                            "key": "field_55106f1ead145",
+                            "label": "Product 1",
+                            "name": "product_1",
+                            "prefix": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33.33333",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "product"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 1,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_55106f59ad146",
+                            "label": "Product 2 (Most Popular)",
+                            "name": "product_2",
+                            "prefix": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33.33333",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "product"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 1,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_55106f72ad147",
+                            "label": "Product 3",
+                            "name": "product_3",
+                            "prefix": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33.33333",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "product"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 1,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_551096f07ab06",
+                            "label": "Results Collapsible",
+                            "name": "results_collapsible",
+                            "prefix": "",
+                            "type": "true_false",
+                            "instructions": "Allow this set of results be be collapsible.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_551097557ab07",
+                            "label": "Collapse Label",
+                            "name": "collapse_label",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_551096f07ab06",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
                     "key": "5510429b6aa70",
                     "name": "app_store_links",
                     "label": "App Store Links",
@@ -2579,5 +2785,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1427129212
+    "modified": 1427152610
 }

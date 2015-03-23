@@ -2,7 +2,7 @@
 /**
  * Product Grid Item
  */
-$product_icon = wp_get_attachment_image_src( get_field('icon_image'), 'thumb' );
+$product_icon = wp_get_attachment_image_src( get_field('product_thumbnail'), 'thumb' );
 
 ?>
 <div class="colored-tile product-tile bg-theme-gray">
