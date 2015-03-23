@@ -1,10 +1,10 @@
 <?php
 /**
- * Employee Grid
+ * Product Grid
  */
  ?>
 
-<div class="module-grid">
+<div class="product-grid">
   <div class="container">
     <?php
       $col_count = get_sub_field( 'display_columns' );
