@@ -156,3 +156,62 @@ function the_breadcrumbs($classes) {
 
   echo '</ul>';
 }
+
+function the_post_pagination_navigation($use_page_numbers) {
+  global $wp_query;
+
+  if( $wp_query->max_num_pages < 2 ) {
+    return;
+  }
+
+  if ( $use_page_numbers ) {
+    $big = 9999999999;
+    $args = array (
+      'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+      'format' => '?page=%#%',
+      'total' => $wp_query->max_num_pages,
+      'current' => max( 1, get_query_var( 'paged' ) ),
+      'show_all' => false,
+      'end_size' => 1,
+      'mid_size' => 2,
+      'prev_next' => false,
+      'type' => 'array'
+    );
+  }
+
+  // output
+  ?>
+  <nav class="navigation paging-navigation text-center" role="navigation">
+    <h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'sole_graphics' ); ?></h1>
+    <ul class="pagination">
+
+      <?php if ( get_previous_posts_link() ) : ?>
+        <li>
+          <?php previous_posts_link( __( '«', 'sole_graphics' ) ); ?>
+        </li>
+      <?php endif; ?>
+
+      <?php if ( $use_page_numbers ) {
+
+        $pages = paginate_links( $args );
+        $pagination = '';
+        foreach ($pages as $page) {
+          if ( strpos($page, 'current') ) {
+            $pagination .= '<li class="active">'.$page.'</li>';
+          } else {
+            $pagination .= '<li>'.$page.'</li>';
+          }
+        }
+        echo $pagination;
+      } ?>
+
+      <?php if ( get_next_posts_link() ) : ?>
+        <li>
+          <?php next_posts_link( __( '»', 'sole_graphics' ) ); ?>
+        </li>
+      <?php endif; ?>
+
+    </ul><!-- .pagination -->
+  </nav><!-- .navigation -->
+  <?php
+}

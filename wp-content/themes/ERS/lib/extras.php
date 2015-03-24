@@ -107,3 +107,14 @@ add_action('before_sidebar', __NAMESPACE__ . '\\sidebar_isotope_filters');
 function add_isotope_filter_widget(  $filter_by_title, $filter_by_slug ) {
   include( locate_template('templates/widget-isotope_filters.php') );
 }
+
+function generate_content_excerpt($content, $word_limit){
+  $content_excerpt = strip_tags( $content );
+  $content_excerpt = explode( ' ', $content_excerpt, $word_limit+1 );
+
+  if(count($content_excerpt) > $word_limit) {
+    array_pop($content_excerpt);
+  }
+
+  return implode(' ', $content_excerpt) . '...';
+}
