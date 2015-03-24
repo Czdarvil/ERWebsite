@@ -24,17 +24,17 @@ if (get_field('category_color_override') !== 'default' ) {
 $modalId = $post->post_name;
 
 ?>
-<div class="colored-tile <?php echo $category_color; ?> module-tile" data-toggle="modal" data-target="#<?php echo $modalId; ?>">
+<div class="colored-tile <?php echo $category_color; ?> module-tile">
   <div class="icon">
     <img src="<?php echo $module_icon[0] ?>" alt="<?php the_title(); ?>">
   </div>
   <h4><?php the_title(); ?></h4>
   <h5>module</h5>
- <!--  <a href="<?php the_permalink(); ?>" class="cover-link">&nbsp;</a> -->
+  <a href="<?php the_permalink(); ?>" class="cover-link">&nbsp;</a>
 </div>
 
 <!-- MODULE MODAL -->
-<div class="modal fade" id="<?php echo $modalId; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="<?php echo $modalId; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -84,3 +84,4 @@ $modalId = $post->post_name;
     </div>
   </div>
 </div>
+ -->
