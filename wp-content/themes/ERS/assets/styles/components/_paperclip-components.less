@@ -1275,6 +1275,7 @@ iframe[src="about:blank"] {
 }
 
 /* ===== Timeline ===== */
+body { // to avoid conflict with the timeline body class
 
 .timeline {
   position: relative;
@@ -1327,17 +1328,16 @@ iframe[src="about:blank"] {
       position: absolute;
       content: ".";
       top: 20px;
-      right: -10px;
+      right: -9px;
       font-size: 72px;
       line-height: 0;
       color: @new-gray-darker - #111111;
     }
     &:nth-child(2n):before {
       right: auto;
-      left: -8px;
+      left: -7px;
     }
     &:hover {
-      cursor: pointer;
       h3 {
         color: @primary-color;
       }
@@ -1567,7 +1567,7 @@ iframe[src="about:blank"] {
     }
   }
 }
-
+}
 /* ===== Search Results ===== */
 
 .b-search-results__search-input {

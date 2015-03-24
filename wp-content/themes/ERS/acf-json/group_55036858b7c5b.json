@@ -265,6 +265,236 @@
                     "max": ""
                 },
                 {
+                    "key": "5511ae1f83944",
+                    "name": "timeline",
+                    "label": "Timeline",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5511ae2883945",
+                            "label": "Alignment",
+                            "name": "alignment",
+                            "prefix": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Left",
+                                "center": "Center",
+                                "right": "Right"
+                            },
+                            "default_value": {
+                                "": ""
+                            },
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "disabled": 0,
+                            "readonly": 0
+                        },
+                        {
+                            "key": "field_5511ae5183946",
+                            "label": "Heading",
+                            "name": "heading",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_5511ae5a83947",
+                            "label": "Subheading",
+                            "name": "subheading",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_5511ae6083948",
+                            "label": "Start Year",
+                            "name": "start_year",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_5511ae6783949",
+                            "label": "End Year",
+                            "name": "end_year",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_5511ae6f8394a",
+                            "label": "Milestones",
+                            "name": "milestones",
+                            "prefix": "",
+                            "type": "repeater",
+                            "instructions": "Order of milestones imply Oldest to Newest, Top to Bottom.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "min": "",
+                            "max": "",
+                            "layout": "block",
+                            "button_label": "Add Milestone",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5511ae848394b",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "prefix": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": 75,
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "readonly": 0,
+                                    "disabled": 0
+                                },
+                                {
+                                    "key": "field_5511ae8a8394c",
+                                    "label": "Date",
+                                    "name": "date",
+                                    "prefix": "",
+                                    "type": "date_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": 25,
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "display_format": "F j, Y",
+                                    "return_format": "F j, Y",
+                                    "first_day": 1
+                                },
+                                {
+                                    "key": "field_5511e09457a5b",
+                                    "label": "Title Link",
+                                    "name": "title_link",
+                                    "prefix": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "readonly": 0,
+                                    "disabled": 0
+                                },
+                                {
+                                    "key": "field_5511ae9b8394d",
+                                    "label": "Content",
+                                    "name": "content",
+                                    "prefix": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
                     "key": "55036a14a170a",
                     "name": "employee_grid",
                     "label": "Employee Grid",
@@ -2785,5 +3015,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1427152610
+    "modified": 1427234989
 }
