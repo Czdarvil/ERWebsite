@@ -12,12 +12,7 @@
     ?>
     <div class="row">
       <div class="col-sm-12">
-        <?php if ( get_sub_field('heading') ): ?>
-          <h2 class="headline-lg"><?php the_sub_field('heading'); ?></h2>
-        <?php endif; ?>
-        <?php if ( get_sub_field('subheading') ): ?>
-          <h4><?php the_sub_field('subheading'); ?></h4>
-        <?php endif; ?>
+        <?php get_template_part('templates/components/component-common-headings'); ?>
       </div>
     </div>
     <div class="row products">

@@ -16,8 +16,7 @@ if ( $bg_image ) {
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h2 class="headline-lg"><?php the_sub_field('heading'); ?></h2>
-        <h4><?php the_sub_field('subheading'); ?></h4>
+        <?php get_template_part('templates/components/component-common-headings'); ?>
       </div>
     </div> <!-- / .row -->
     <?php
