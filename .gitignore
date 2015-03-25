@@ -26,6 +26,7 @@ wp-content/plugins/*
 !wp-content/plugins/posts-to-posts
 !wp-content/plugins/radio-buttons-for-taxonomies
 !wp-content/plugins/regenerate-thumbnails
+!wp-content/plugins/search-everything
 
 # Select Themes
 wp-content/themes/*
