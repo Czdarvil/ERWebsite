@@ -13,6 +13,7 @@ npm-debug.log
 # WP Content
 wp-config.php
 wp-content/*
+wp-content/plugins/*/*.log
 !wp-content/plugins/
 !wp-content/themes/
 
