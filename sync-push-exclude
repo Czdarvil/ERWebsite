@@ -46,6 +46,7 @@ sync-push-exclude
 /wp-content/themes/*/.sass-cache
 /wp-content/themes/*/.travis.yml
 /wp-content/themes/*/assets
+/wp-content/themes/*/bower_components
 /wp-content/themes/*/bower.json
 /wp-content/themes/*/config.json
 /wp-content/themes/*/Gruntfile.js
