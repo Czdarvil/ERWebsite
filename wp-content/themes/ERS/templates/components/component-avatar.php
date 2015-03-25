@@ -2,10 +2,12 @@
 /**
  * Avatar
  */
-$avatar = wp_get_attachment_image_src(get_field('headshot'), 'full');
+use Roots\Sage\Assets;
+
+$avatar = wp_get_attachment_image_src(get_field('headshot'), 'medium');
 
 // Default avatar placeholder
-$avatar_src = 'http://nicenicejpg.com/200/200';
+$avatar_src = Assets\asset_path('images/headshot-fallback.png');
 
 if ( $avatar ) {
     $avatar_src = $avatar[0];
