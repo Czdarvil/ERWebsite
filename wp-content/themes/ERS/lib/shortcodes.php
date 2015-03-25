@@ -22,3 +22,13 @@ function shortcode_progress_bar($atts){
 }
 add_shortcode('meter', 'shortcode_progress_bar');
 add_shortcode('progress', 'shortcode_progress_bar');
+
+/**
+ * [current_year]
+ *
+ * @return  string  full current year
+ */
+function sg_current_year() {
+  return date( 'Y' );
+}
+add_shortcode( 'current_year', 'sg_current_year' );

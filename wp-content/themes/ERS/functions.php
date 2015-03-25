@@ -34,20 +34,36 @@ foreach ($sage_includes as $file) {
 }
 unset($file, $filepath);
 
-function themeslug_theme_customizer( $wp_customize ) {
-  $wp_customize->add_section( 'themeslug_logo_section' , array(
-    'title'       => __( 'Logo', 'themeslug' ),
+function ers_logo_customizer( $wp_customize ) {
+  $wp_customize->add_section( 'ers_logo_section' , array(
+    'title'       => 'Logo',
     'priority'    => 30,
     'description' => 'Upload a logo to replace the default site name and description in the header',
   ) );
 
-  $wp_customize->add_setting( 'themeslug_logo' );
+  $wp_customize->add_setting( 'ers_logo' );
 
-  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themeslug_logo', array(
-      'label'    => __( 'Logo', 'themeslug' ),
-      'section'  => 'themeslug_logo_section',
-      'settings' => 'themeslug_logo',
+  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ers_logo', array(
+      'label'    => 'Logo',
+      'section'  => 'ers_logo_section',
+      'settings' => 'ers_logo',
   ) ) );
 
 }
-add_action('customize_register',  __NAMESPACE__ . '\\themeslug_theme_customizer');
+add_action('customize_register',  __NAMESPACE__ . '\\ers_logo_customizer');
+
+function ers_copyright_customizer( $wp_customize ) {
+  $wp_customize->add_section('ers_footer', array(
+    'title' => 'Footer Copyright',
+    'priority' => 80,
+    'description' => "Edit the copyright line for the footer. You can use the shortcode [current_year] to output the current year."
+  ));
+  $wp_customize->add_setting( 'ers_copyright' );
+
+  $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'ers_copyright', array(
+    'label' => 'Copyright text',
+    'section' => 'ers_footer',
+    'settings' => 'ers_copyright'
+  )));
+}
+add_action('customize_register',  __NAMESPACE__ . '\\ers_copyright_customizer');

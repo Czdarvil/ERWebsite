@@ -3,7 +3,7 @@
 <header class="banner navbar navbar-default navbar-fixed-top" role="banner">
   <div class="top-nav container">
     <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-      <img alt="<?php bloginfo('name'); ?>" src="<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>">
+      <img alt="<?php bloginfo('name'); ?>" src="<?php echo esc_url( get_theme_mod( 'ers_logo' ) ); ?>">
     </a>
     <div class="pull-right">
       <a href="/er-login" class="navbar-btn btn btn-theme-primary">Login</a>
