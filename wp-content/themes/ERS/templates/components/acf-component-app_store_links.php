@@ -8,6 +8,7 @@ use Roots\Sage\Assets
   <div class="container">
     <div class="row text-center">
       <div class="col-md-8 col-md-offset-2">
+        <?php get_template_part('templates/components/component-common-headings'); ?>
         <div class="row">
           <?php
             $stores = get_sub_field('stores');
