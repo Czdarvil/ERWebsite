@@ -157,6 +157,21 @@ function the_breadcrumbs($classes) {
   echo '</ul>';
 }
 
+function post_type_has_breadcrumbs($post_type) {;
+  $breadcrumbs = false;
+
+  $has_breadcrumbs = apply_filters('post_type_breadcrumbs', array(
+    'module',
+    'employee'
+  ) );
+
+  if ( in_array( $post_type, $has_breadcrumbs ) ) {
+    $breadcrumbs = true;
+  }
+
+  return $breadcrumbs;
+}
+
 function the_post_pagination_navigation($use_page_numbers) {
   global $wp_query;
 

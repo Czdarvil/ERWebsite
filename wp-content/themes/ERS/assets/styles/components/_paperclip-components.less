@@ -1082,6 +1082,26 @@ html, body {
   }
 }
 
+@media screen and (max-width: @screen-xs-max ) {
+  .isotope-filters {
+    .page-content {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+
+      .main,
+      .sidebar {
+        display: table-row;
+      }
+      .sidebar.isotope-filter {
+        display: table-header-group;
+      }
+    }
+  }
+}
+
 /* ===== 404 Not Found ===== */
 
 .not-found {

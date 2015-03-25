@@ -15,16 +15,18 @@
 if ( !$filter_by_title || !$filter_by_slug ) { return; }
 
 ?>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    Filter by <?php echo $filter_by_title; ?>
+<aside class="sidebar isotope-filter">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Filter by <?php echo $filter_by_title; ?>
+    </div>
+    <div class="panel-body">
+      <ul id="filters">
+        <li><a href="#" data-filter="*">All</a></li>
+        <?php foreach( get_terms($filter_by_slug) as $term ): ?>
+          <li><a href="#" data-filter=".<?php echo $filter_by_slug.'_'.$term->slug; ?>"><?php echo $term->name; ?></a></li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
   </div>
-  <div class="panel-body">
-    <ul id="filters">
-      <li><a href="#" data-filter="*">All</a></li>
-      <?php foreach( get_terms($filter_by_slug) as $term ): ?>
-        <li><a href="#" data-filter=".<?php echo $filter_by_slug.'_'.$term->slug; ?>"><?php echo $term->name; ?></a></li>
-      <?php endforeach; ?>
-    </ul>
-  </div>
-</div>
+</aside>

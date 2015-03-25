@@ -34,6 +34,7 @@ $modalId = $post->post_name;
               <img class="img-responsive center-block" src="<?php echo $avatar_src ?>" alt="<?php the_title(); ?>">
               <?php the_title(); ?>
               <p class="text-muted"><?php the_field('position'); ?></p>
+              <a href="<?php the_permalink(); ?>" class="cover-link"></a>
             </div>
           </div>
           <div class="col-sm-8">
