@@ -1,0 +1,64 @@
+# Files to be excluded when pushing updates to the site
+
+# Local filesytem
+.DS_Store
+.git
+.gitignore
+.htaccess
+*.sublime-*
+*.log
+/sync-*
+/staging
+
+# Dev stuff
+node_modules
+.sass-cache
+Gruntfile.coffee
+Gruntfile.js
+bower.json
+.bowerrc
+package.json
+*.css.map
+
+# These push files
+sync-push
+sync-push-exclude
+
+# WP Stuff
+/license.txt
+/readme.html
+/README.md
+/wp-config.php
+/wp-content/cache
+/wp-content/uploads
+/wp-content/upgrade
+
+# Old Themes
+/wp-content/themes/twentyfourteen
+/wp-content/themes/twentythirteen
+
+# Theme Dev Files
+/wp-content/themes/*/*.md
+/wp-content/themes/*/.bowerrc
+/wp-content/themes/*/.editorconfig
+/wp-content/themes/*/.jscsrc
+/wp-content/themes/*/.jshintrc
+/wp-content/themes/*/.sass-cache
+/wp-content/themes/*/.travis.yml
+/wp-content/themes/*/assets
+/wp-content/themes/*/bower.json
+/wp-content/themes/*/config.json
+/wp-content/themes/*/Gruntfile.js
+/wp-content/themes/*/gulpfile.js
+/wp-content/themes/*/js/dev
+/wp-content/themes/*/js/vendors
+/wp-content/themes/*/node_modules
+/wp-content/themes/*/package.json
+/wp-content/themes/*/sass
+
+# Auto Generated Plugin Gunk
+/wp-content/*-cache.php
+/wp-content/db.php
+/wp-content/ewww
+/wp-content/plugins/*/*.log
+/wp-content/w3tc-config
