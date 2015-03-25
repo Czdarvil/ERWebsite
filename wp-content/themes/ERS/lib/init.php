@@ -99,9 +99,8 @@ function add_custom_post_types() {
   ));
   register_taxonomy( 'type', 'product', array(
     'label' => 'Product Types',
-    // 'rewrite' => array( 'slug' => 'type' ),
+    'rewrite' => array( 'slug' => 'type' ),
     'rewrite' => false,
-    'public' => false,
     'show_ui' => true,
     'hierarchical' => true
   ));
@@ -117,9 +116,7 @@ function add_custom_post_types() {
     'label' => 'Features',
     'rewrite' => false,
     'hierarchical' => true,
-    'public' => false,
-    'show_ui' => true
-    // 'rewrite' => array( 'slug' => 'features' )
+    'show_ui' => true,
   ));
 }
 add_action('init', __NAMESPACE__ . '\\add_custom_post_types');
