@@ -51,10 +51,10 @@ function widgets_init() {
   register_sidebar([
     'name'          => __('Primary', 'sage'),
     'id'            => 'sidebar-primary',
-    'before_widget' => '<section class="widget %1$s %2$s">',
+    'before_widget' => '<section class="widget %1$s %2$s panel panel-default">',
     'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
+    'before_title'  => '<div class="panel-heading">',
+    'after_title'   => '</div>'
   ]);
 
   register_sidebar([
@@ -67,6 +67,13 @@ function widgets_init() {
   ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
+
+function text_widget_panel_body($content) {
+  $content = '<div class="panel-body">'.$content.'</div>';
+
+  return $content;
+}
+add_action('widget_text', __NAMESPACE__ . '\\text_widget_panel_body');
 
 
 function add_custom_post_types() {

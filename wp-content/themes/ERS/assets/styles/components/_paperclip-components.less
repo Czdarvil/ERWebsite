@@ -555,7 +555,14 @@ html, body {
 }
 
 /*** Blog Tags ***/
-
+.widget_tag_cloud.panel {
+  border: 0;
+  box-shadow: none;
+  .tagcloud {
+    padding: 6px 0;
+  }
+}
+.tagcloud > a,
 .blog-tags > a {
   padding: 3px 6px;
   margin: 4px 4px 4px 0;
@@ -565,7 +572,8 @@ html, body {
   border-radius: @border-radius-base;
   color: #515151;
   text-decoration: none;
-  font-size: @font-size-small;
+  font-weight: normal;
+  font-size: @font-size-small !important;
   white-space: nowrap;
   display: inline-block;
   .transition(all 150ms);
