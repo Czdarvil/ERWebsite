@@ -27,6 +27,11 @@ wp-content/plugins/*
 !wp-content/plugins/radio-buttons-for-taxonomies
 !wp-content/plugins/regenerate-thumbnails
 !wp-content/plugins/search-everything
+!wp-content/plugins/gravityforms
+!wp-content/plugins/w3-total-cache
+!wp-content/plugins/ewww-image-optimizer
+!wp-content/plugins/google-analytics-for-wordpress
+!wp-content/plugins/wordpress-seo
 
 # Select Themes
 wp-content/themes/*
