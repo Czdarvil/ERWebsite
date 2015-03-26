@@ -29,3 +29,12 @@
 .sidebar {
   .make-sm-column(@sidebar-sm-columns);
 }
+@media (min-width: @screen-sm-min) {
+  .left_sidebar .sidebar {
+    clear: left;
+  }
+  .right_sidebar .sidebar {
+    clear: right;
+    float: right;
+  }
+}
