@@ -68,13 +68,6 @@ function widgets_init() {
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 
-function text_widget_panel_body($content) {
-  $content = '<div class="panel-body">'.$content.'</div>';
-
-  return $content;
-}
-add_action('widget_text', __NAMESPACE__ . '\\text_widget_panel_body');
-
 
 function add_custom_post_types() {
   /**
