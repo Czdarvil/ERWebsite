@@ -118,3 +118,8 @@ function generate_content_excerpt($content, $word_limit){
 
   return implode(' ', $content_excerpt) . '...';
 }
+
+/**
+ * Enable shortcodes in sidebar widgets
+ */
+add_filter('widget_text', 'do_shortcode');
