@@ -123,3 +123,15 @@ function generate_content_excerpt($content, $word_limit){
  * Enable shortcodes in sidebar widgets
  */
 add_filter('widget_text', 'do_shortcode');
+
+/**
+ * Remove post limit from specific archives
+ */
+function archive_no_post_limit($query) {
+  if ( $query->is_post_type_archive( array('module','product','employee') ) ) {
+    $query->set('posts_per_page', -1);
+    $query->set('nopaging', true);
+  }
+  return $query;
+}
+add_filter('pre_get_posts', __NAMESPACE__ . '\\archive_no_post_limit');
