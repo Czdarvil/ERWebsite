@@ -433,6 +433,33 @@ html, body {
 }
 
 /* ===== Module Tile ===== */
+@media (min-width: @screen-sm-min){
+  .module-grid .modules,
+  .product-grid .products,
+  .employee-grid .employees  {
+    > .col-sm-3:nth-child(4n+1) {
+      clear: left;
+    }
+    > .col-sm-4:nth-child(3n+1) {
+      clear: left;
+    }
+    > .col-sm-6:nth-child(2n+1) {
+      clear: left;
+    }
+    > .col-sm-2:nth-child(6n+1) {
+      clear: left;
+    }
+  }
+}
+@media (max-width: @screen-xs-max){
+  .module-grid .modules,
+  .product-grid .products,
+  .employee-grid .employees {
+    > .col-xs-6:nth-child(2n+1) {
+      clear: left;
+    }
+  }
+}
 .module-tile {
   cursor: pointer;
 
