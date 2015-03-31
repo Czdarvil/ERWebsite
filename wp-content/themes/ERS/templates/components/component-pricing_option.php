@@ -46,7 +46,7 @@ if ( $state ) {
       <?php echo $details; ?>
     </div>
     <div class="pricing-button">
-      <a href="/get-a-free-trial/" class="btn btn-theme-primary">Get a Free Trial</a>
+      <a href="/get-a-free-trial/?preselect=<?php echo $post->post_name; ?>" class="btn btn-theme-primary">Get a Free Trial</a>
       <a href="/contact-us/" class="btn btn-theme-tirtiary">Contact Sales</a>
     </div>
   </div>
