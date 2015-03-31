@@ -1231,24 +1231,44 @@ html, body {
 
   > li {
    padding: 10px 0;
+   border-top: 0 !important;
    border-bottom: 1px dashed #ddd;
   }
   .fa {
    float: left;
-   margin-top: 10px;
-   font-size: 28px;
+   margin-top: 5px;
+   font-size: 20px;
+   display: inline-block;
+   text-align: center;
+   width: 20px;
   }
 }
 .contact-info-content {
   overflow: hidden;
-  margin-left: 45px;
-
+  margin-left: 25px;
+  a {
+    font-weight: normal;
+    text-transform: none;
+  }
   .title {
    font-weight: 700;
    margin-bottom: 0;
   }
   .description {
-   font-size: @font-size-small + 1px;
+   font-size: @font-size-small;
+  }
+}
+
+.textwidget {
+  .social {
+    ul li {
+      padding: 0;
+      border-top: 0 !important;
+
+      a{
+        padding: 0;
+      }
+    }
   }
 }
 
