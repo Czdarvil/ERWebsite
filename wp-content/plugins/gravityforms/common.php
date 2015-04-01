@@ -2664,6 +2664,30 @@ class GFCommon {
 		return self::match_file_extension( $file_name, self::get_disallowed_file_extensions() ) || strpos( strtolower( $file_name ), '.php.' ) !== false;
 	}
 
+	public static function check_type_and_ext( $file, $file_name = ''){
+		if ( empty( $file_name ) ) {
+			$file_name = $file['name'];
+		}
+		$tmp_name = $file['tmp_name'];
+		// Whitelist the mime type and extension
+		$wp_filetype = wp_check_filetype_and_ext( $tmp_name, $file_name );
+		$ext = empty( $wp_filetype['ext'] ) ? '' : $wp_filetype['ext'];
+		$type = empty( $wp_filetype['type'] ) ? '' : $wp_filetype['type'];
+		$proper_filename = empty( $wp_filetype['proper_filename'] ) ? '' : $wp_filetype['proper_filename'];
+
+		if ( $proper_filename ) {
+			return new WP_Error( 'invalid_file', __( 'There was an problem while verifying your file.' ) );
+		}
+		if ( ! $ext ) {
+			return new WP_Error( 'illegal_extension', __( 'Sorry, this file extension is not permitted for security reasons.' ) );
+		}
+		if ( ! $type ) {
+			return new WP_Error( 'illegal_type', __( 'Sorry, this file type is not permitted for security reasons.' ) );
+		}
+
+		return true;
+	}
+
 	public static function to_money( $number, $currency_code = '' ) {
 		if ( ! class_exists( 'RGCurrency' ) ) {
 			require_once( 'currency.php' );

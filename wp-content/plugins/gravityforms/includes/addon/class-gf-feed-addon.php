@@ -36,9 +36,9 @@ abstract class GFFeedAddOn extends GFAddOn {
 	private $_feed_settings_fields = array();
 	private $_current_feed_id = false;
 
-	public function init_frontend() {
+	public function init() {
 
-		parent::init_frontend();
+		parent::init();
 
 		add_filter( 'gform_entry_post_save', array( $this, 'maybe_process_feed' ), 10, 2 );
 

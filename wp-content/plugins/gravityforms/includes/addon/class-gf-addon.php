@@ -360,7 +360,7 @@ abstract class GFAddOn {
 				'src'     => GFAddOn::get_gfaddon_base_url() . '/css/gaddon_settings.css',
 				'version' => GFCommon::$version,
 				'enqueue' => array(
-					array( 'admin_page' => array( 'form_settings', 'plugin_settings', 'plugin_page' ) ),
+					array( 'admin_page' => array( 'form_settings', 'plugin_settings', 'plugin_page', 'app_settings' ) ),
 				)
 			),
 			array(

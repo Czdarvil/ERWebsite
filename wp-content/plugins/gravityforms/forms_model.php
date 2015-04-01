@@ -2357,13 +2357,13 @@ class GFFormsModel {
 		$unique_id = '';
 		if ( rgpost( 'gform_submit' ) == $form_id ) {
 			$posted_uid = rgpost( 'gform_unique_id' );
-			if ( false === empty( $posted_uid ) ) {
-				$unique_id                  = $posted_uid;
+			if ( false === empty( $posted_uid ) && ctype_alnum( $posted_uid )) {
+				$unique_id = $posted_uid;
 				self::$unique_ids[ $form_id ] = $unique_id;
 			} elseif ( isset( self::$unique_ids[ $form_id ] ) ) {
 				$unique_id = self::$unique_ids[ $form_id ];
 			} else {
-				$unique_id                  = uniqid();
+				$unique_id = uniqid();
 				self::$unique_ids[ $form_id ] = $unique_id;
 			}
 		}

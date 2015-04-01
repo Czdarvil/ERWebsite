@@ -1,4 +1,26 @@
 -------------------------------------------------------------------------------------------------------------------
+Version 1.9.5.4
+	- Fixed issue where query string with special characters in confirmation redirect setting would get saved incorrectly.
+
+-------------------------------------------------------------------------------------------------------------------
+Version 1.9.5.3
+	- Fixed issue where post custom fields configured as Time or Date weren't getting properly upgraded to 1.9 format.
+
+-------------------------------------------------------------------------------------------------------------------
+Version 1.9.5.2
+	- AF: Fixed issue whith styles not getting enqueued for in the app settings page.
+
+-------------------------------------------------------------------------------------------------------------------
+Version 1.9.5.1
+    - Added security precautions to the file upload field. If the allowed file types setting is empty, then uploaded files will be checked against the WordPress whitelist of extensions and mime types. Use the WordPress filter upload_mimes to add or remove extensions/types. Use the gform_file_upload_whitelisting_disabled filter to disable completely. Example:
+        add_filter('gform_file_upload_whitelisting_disabled', '__return_true');
+    - Updated the Spanish (es_ES) translation.
+    - Fixed an issue in the form editor on WordPress 4.2 where the fields lower down the page cannot be reordered.
+    - Fixed the shortcode preview on WordPress 4.2.
+    - Fixed a JavaScript error in the single File Upload field when clearing a file that has failed validation.
+    - AF: Fixed an issue in the form submission process where feeds don't get processed for forms loaded via ajax or in the dashboard
+
+-------------------------------------------------------------------------------------------------------------------
 Version 1.9.5
     - Added JS filter: 'gform_form_editor_can_field_be_added' allowing developers to prevent custom field types being added to the form if the conditions they define, such as a Product field being present, are not met.
           gform.addFilter('gform_form_editor_can_field_be_added', function (canFieldBeAdded, type) {

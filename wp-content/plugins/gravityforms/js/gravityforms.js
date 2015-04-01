@@ -223,23 +223,27 @@ function gformDeleteUploadedFile(formId, fieldId, deleteButton){
     parent.find("input[type=\"text\"]").val('');
 
     //removing file from uploaded meta
-    var files = jQuery.secureEvalJSON(jQuery('#gform_uploaded_files_' + formId).val());
-    if(files){
-        var inputName = "input_" + fieldId;
-        var $multfile = parent.find("#gform_multifile_upload_" + formId + "_" + fieldId );
-        if( $multfile.length > 0 ) {
-            files[inputName].splice(fileIndex, 1);
-            var settings = $multfile.data('settings');
-            var max = settings.gf_vars.max_files;
-            jQuery("#" + settings.gf_vars.message_id).html('');
-            if(files[inputName].length < max)
-                gfMultiFileUploader.toggleDisabled(settings, false);
+    var filesJson = jQuery('#gform_uploaded_files_' + formId).val();
 
-        } else {
-            files[inputName] = null;
+    if(filesJson){
+        var files = jQuery.secureEvalJSON(filesJson);
+        if(files) {
+            var inputName = "input_" + fieldId;
+            var $multfile = parent.find("#gform_multifile_upload_" + formId + "_" + fieldId );
+            if( $multfile.length > 0 ) {
+                files[inputName].splice(fileIndex, 1);
+                var settings = $multfile.data('settings');
+                var max = settings.gf_vars.max_files;
+                jQuery("#" + settings.gf_vars.message_id).html('');
+                if(files[inputName].length < max)
+                    gfMultiFileUploader.toggleDisabled(settings, false);
+
+            } else {
+                files[inputName] = null;
+            }
+
+            jQuery('#gform_uploaded_files_' + formId).val(jQuery.toJSON(files));
         }
-
-        jQuery('#gform_uploaded_files_' + formId).val(jQuery.toJSON(files));
     }
 }
 
