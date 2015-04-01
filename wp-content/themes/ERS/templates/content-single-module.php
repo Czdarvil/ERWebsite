@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-  <? endif; ?>
+  <?php endif; ?>
 
   <?php get_template_part('templates/layout-components'); ?>
 <?php endwhile; ?>
