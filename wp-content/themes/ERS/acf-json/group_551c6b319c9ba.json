@@ -1,0 +1,154 @@
+{
+    "key": "group_551c6b319c9ba",
+    "title": "Theme Options",
+    "fields": [
+        {
+            "key": "field_551c6e2bd79fe",
+            "label": "General",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left"
+        },
+        {
+            "key": "field_551c6e74f379f",
+            "label": "Other Options",
+            "name": "",
+            "prefix": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Some theme options are accessible through Appearance > Customize\r\n\r\nSuch as:\r\n<ul class=\"ul-disc\">\r\n<li>Site Title & Tagline<\/li>\r\n<li>Site Logo<\/li>\r\n<li>Footer Copyright<\/li>\r\n<\/ul>",
+            "esc_html": 0
+        },
+        {
+            "key": "field_551c6b3c0e0e0",
+            "label": "Login URL",
+            "name": "login_url",
+            "prefix": "",
+            "type": "url",
+            "instructions": "Url will be used for the main \"Login\" button in the header of the site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_551c6caf0e0e1",
+            "label": "Script Block Locations",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left"
+        },
+        {
+            "key": "field_551c6cc20e0e2",
+            "label": "Head",
+            "name": "scripts_head",
+            "prefix": "",
+            "type": "textarea",
+            "instructions": "Add script blocks that should run in the head.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_551c6d440e0e3",
+            "label": "After Opening Body Tag",
+            "name": "scripts_after_opening_body",
+            "prefix": "",
+            "type": "textarea",
+            "instructions": "Add script blocks that should run just after the opening body tag.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_551c6d6e0e0e4",
+            "label": "Before Closing Body Tag",
+            "name": "scripts_before_closing_body",
+            "prefix": "",
+            "type": "textarea",
+            "instructions": "Add script blocks that should run just before the closing body tag in the footer of the site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-theme-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1427927093
+}

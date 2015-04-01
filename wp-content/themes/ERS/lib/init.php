@@ -41,6 +41,10 @@ function setup() {
   add_editor_style(Assets\asset_path('styles/editor-style.css'));
 
   add_image_size( 'gallery_carousel', 485, 485, true );
+
+  if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page('Theme Options');
+  }
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 

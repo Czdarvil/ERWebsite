@@ -6,7 +6,7 @@
       <img alt="<?php bloginfo('name'); ?>" src="<?php echo esc_url( get_theme_mod( 'ers_logo' ) ); ?>">
     </a>
     <div class="pull-right">
-      <a href="/er-login" class="navbar-btn btn btn-theme-primary">Login</a>
+      <a href="<?php the_field('login_url', 'options'); ?>" class="navbar-btn btn btn-theme-primary">Login</a>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only"><?php echo __('Toggle navigation', 'sage'); ?></span>
         <span class="icon-bar"></span>
