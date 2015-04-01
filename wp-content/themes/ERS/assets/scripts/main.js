@@ -62,6 +62,9 @@
         // filter items on button click
         $('#filters a').on('click', function(e) {
           var filterValue = $(this).attr('data-filter');
+          var $parent = $(this).parent();
+          $parent.addClass('active-filter');
+          $parent.siblings('li').removeClass('active-filter');
           $container.isotope({ filter: filterValue });
           return false;
         });

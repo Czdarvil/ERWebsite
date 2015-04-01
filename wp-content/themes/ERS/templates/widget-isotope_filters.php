@@ -22,7 +22,7 @@ if ( !$filter_by_title || !$filter_by_slug ) { return; }
     </div>
     <div class="panel-body">
       <ul id="filters">
-        <li><a href="#" data-filter="*">All</a></li>
+        <li class="active-filter"><a href="#" data-filter="*">All</a></li>
         <?php foreach( get_terms($filter_by_slug) as $term ): ?>
           <li><a href="#" data-filter=".<?php echo $filter_by_slug.'_'.$term->slug; ?>"><?php echo $term->name; ?></a></li>
         <?php endforeach; ?>

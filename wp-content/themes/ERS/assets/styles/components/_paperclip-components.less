@@ -919,12 +919,24 @@ html, body {
   border: 1px solid @new-gray-dark;
 }
 
+/* ===== Isotope Filters ===== */
+#filters {
+  .active-filter a {
+    color: @er-maroon;
+    &:before {
+      content: '\00bb ';
+      font-size: 16px;
+      display: inline-block;
+      line-height: 12px;
+      margin-right: .25em;
+    }
+  }
+}
 /* ===== Portfolio ===== */
 
 #isotope-container .portfolio-item {
   margin-bottom: 20px;
 }
-
 /* ===== Portfolio Item ===== */
 
 .portfolio-slideshow {
