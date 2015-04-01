@@ -202,7 +202,7 @@ Last change:    18/02/2015
 
 /* ===== Navbar ===== */
 
-@navbar-height: 45px; // 65px default
+@navbar-height: 36px; // 65px default
 @navbar-default-bg: white;
 @navbar-default-border: @new-gray-darker;
 @navbar-default-link-color: #999;
@@ -226,13 +226,23 @@ Last change:    18/02/2015
 
 @navbar-default-brand-color: @navbar-default-link-color;
 @navbar-default-brand-hover-color: @navbar-default-link-hover-color;
-
+.top-nav {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+@media (min-width: @grid-float-breakpoint) {
+  .top-nav {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+}
 .navbar-brand {
   font-family: @headings-font-family;
   font-weight: 400;
   font-size: 22px;
-  padding: 4px 0;
+  padding: 0;
   max-width: 50%;
+  height: 36px;
 
   > img {
     width: auto;
