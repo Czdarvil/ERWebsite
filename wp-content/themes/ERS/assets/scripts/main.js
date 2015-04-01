@@ -30,6 +30,20 @@
         });
 
         $(".main").fitVids();
+
+        var $vidLinkEmbeds = $('a[href*="youtube.com"], a[href*="youtu.be"], a[href*="vimeo.com"]');
+        $vidLinkEmbeds.magnificPopup({
+          type: 'iframe',
+          iframe: {
+            patterns: {
+              youtu: {
+                index: 'youtu.be',
+                id: '.be/',
+               src: '//www.youtube.com/embed/%id%?autoplay=1'
+              }
+            }
+          }
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
