@@ -150,40 +150,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_551586904de3c",
-                            "label": "Section Sizing",
-                            "name": "sizes",
-                            "prefix": "",
-                            "type": "select",
-                            "instructions": "Select the sizing for the left and right content",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "3-9": "|-3-|-------9-|",
-                                "4-8": "|-4--|------8-|",
-                                "5-7": "|-5---|-----7-|",
-                                "6-6": "|-6----|----6-|",
-                                "7-5": "|-7-----|---5-|",
-                                "8-4": "|-8------|--4-|",
-                                "9-3": "|-9-------|-3-|"
-                            },
-                            "default_value": {
-                                "6-6": "6-6"
-                            },
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "ajax": 0,
-                            "placeholder": "",
-                            "disabled": 0,
-                            "readonly": 0
-                        },
-                        {
                             "key": "field_550b33ff1f294",
                             "label": "Left Content",
                             "name": "left_content",
@@ -3093,5 +3059,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1427924822
+    "modified": 1428005456
 }
