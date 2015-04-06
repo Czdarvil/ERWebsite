@@ -169,3 +169,31 @@ function add_search_to_primary_nav($items) {
 return $items;
 }
 add_action( 'wp_nav_menu_primary-navigation_items', __NAMESPACE__ .'\\add_search_to_primary_nav' );
+
+
+/**
+ * Add custom fields to Yoast SEO analysis
+ */
+
+add_filter('wpseo_pre_analysis_post_content', __NAMESPACE__ .'\\add_custom_to_yoast');
+
+function add_custom_to_yoast( $content ) {
+  global $post;
+  $custom_content = '';
+  $pid = $post->ID;
+
+  $custom = get_post_custom($pid);
+  unset($custom['_yoast_wpseo_focuskw']); // Don't count the keyword in the Yoast field!
+
+  foreach( $custom as $key => $value ) {
+    if( substr( $key, 0, 1 ) != '_' && substr( $value[0], -1) != '}' && !is_array($value[0]) && !empty($value[0])) {
+      $custom_content .= $value[0] . ' ';
+    }
+
+  }
+
+  $content = $content . ' ' . $custom_content;
+  return $content;
+
+  remove_filter('wpseo_pre_analysis_post_content', __NAMESPACE__ .'\\add_custom_to_yoast'); // don't let WP execute this twice
+}
