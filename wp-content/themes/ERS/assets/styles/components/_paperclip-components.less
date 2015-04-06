@@ -673,15 +673,16 @@ p {
 }
 .b-about-block,
 .intro-block {
-  padding: 50px 0;
+  padding: 50px 0 500px;
   background-color: transparent;
-  background-position: center bottom;
+  background-position: center top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   font-weight: 300;
   font-size: 21px;
   line-height: 1.4;
   text-align: center;
+  margin-bottom: -450px;
   .feature-image {
     text-align: center;
     margin: 150px auto 40px;
@@ -695,8 +696,6 @@ p {
 @media screen and (max-width: @screen-md-max) {
   .b-about-block,
   .intro-block {
-    background-position: center top;
-    background-size: contain;
     .feature-image {
       margin-top: 50px;
     }
