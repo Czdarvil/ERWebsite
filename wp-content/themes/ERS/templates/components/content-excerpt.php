@@ -5,30 +5,25 @@
 use Roots\Sage\Extras;
 
 if ( have_rows('components') ) {
-  $found_excerpt = false;
   $word_limit = 55;
-
+  $excerpt = '';
   while ( have_rows( 'components' ) ) {
     the_row();
     switch( get_row_layout() ) {
       case 'content_block':
       case 'intro_block':
-        echo Extras\generate_content_excerpt( get_sub_field( 'content' ), $word_limit );
-        $found_excerpt = true;
-        break;
       case 'two_up':
-        echo Extras\generate_content_excerpt( get_sub_field( 'left_content' ), $word_limit );
-        $found_excerpt = true;
-        break;
       case 'pricing_inquiry':
-        echo Extras\generate_content_excerpt( get_sub_field( 'form_intro' ), $word_limit );
-        $found_excerpt = true;
+        $excerpt .= get_sub_field( 'heading' ) . ' ';
+        $excerpt .= get_sub_field( 'subheading' ) . ' ';
+        $excerpt .= get_sub_field( 'content' ) . ' ';
+        $excerpt .= get_sub_field( 'left_content' ) . ' ';
+        $excerpt .= get_sub_field( 'right_content' ) . ' ';
+        $excerpt .= get_sub_field( 'form_intro' ) . ' ';
         break;
-    }
-    if ( $found_excerpt ) {
-      break;
     }
   }
+  echo Extras\generate_content_excerpt( $excerpt, $word_limit );
 } else {
   the_excerpt();
 }
