@@ -137,6 +137,10 @@ function the_breadcrumbs($classes) {
         echo '<li><a href="'.get_the_permalink($page).'">'.get_the_title($page).'</a></li>';
       }
     } elseif ( is_archive() ) {
+      global $wp_query;
+      if (get_post_type() == 'post' ) {
+        echo '<li><a href="'.get_permalink( get_option( 'page_for_posts' ) ).'">Blog</a></li>';
+      }
       echo '<li>'.get_the_archive_title().'</li>';
     } elseif ( is_single() ) {
       // if singular and has archive
@@ -145,8 +149,11 @@ function the_breadcrumbs($classes) {
       if ( $archive ) {
         $type = get_post_type_object( get_post_type() );
         echo '<li><a href="'.$archive.'">'.$type->labels->name.'</a></li>';
+      } else if ( get_post_type() == 'post' ) {
+        $archive = get_permalink( get_option( 'page_for_posts' ) );
+        $title = get_the_title(get_option( 'page_for_posts' ));
+        echo '<li><a href="'.$archive.'">'.$title.'</a></li>';
       }
-
     }
 
     // Current single
@@ -162,7 +169,8 @@ function post_type_has_breadcrumbs($post_type) {;
 
   $has_breadcrumbs = apply_filters('post_type_breadcrumbs', array(
     'module',
-    'employee'
+    'employee',
+    'post'
   ) );
 
   if ( in_array( $post_type, $has_breadcrumbs ) ) {

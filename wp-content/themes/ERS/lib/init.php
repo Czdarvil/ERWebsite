@@ -41,6 +41,10 @@ function setup() {
   add_editor_style(Assets\asset_path('styles/editor-style.css'));
 
   add_image_size( 'gallery_carousel', 485, 485, true );
+  // 16:9 ratio featured images.
+  add_image_size( 'post_feature', 742, 417, true );
+  // image for large hero background, single post.
+  add_image_size( 'post_feature_bg', 1280, 720, true );
 
   if( function_exists('acf_add_options_page') ) {
     acf_add_options_page('Theme Options');

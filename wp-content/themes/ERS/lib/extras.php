@@ -135,3 +135,15 @@ function archive_no_post_limit($query) {
   return $query;
 }
 add_filter('pre_get_posts', __NAMESPACE__ . '\\archive_no_post_limit');
+
+/**
+ * Excerpt Length
+ */
+function set_custom_excerpt_length( $length ) {
+  if ( get_field( 'post_excerpt_length', 'options' ) ) {
+    $length = get_field( 'post_excerpt_length', 'options' );
+  }
+
+  return $length;
+}
+add_filter( 'excerpt_length', __NAMESPACE__ . '\\set_custom_excerpt_length', 999 );
