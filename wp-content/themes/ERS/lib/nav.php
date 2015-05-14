@@ -180,7 +180,7 @@ function the_post_pagination_navigation($use_page_numbers) {
   }
 
   if ( $use_page_numbers ) {
-    $big = 9999999999;
+    $big = 999999999;
     $args = array (
       'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
       'format' => '?page=%#%',
