@@ -3024,6 +3024,150 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "555a3e5f378a1",
+                    "name": "blog_posts",
+                    "label": "Blog posts",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_555a3ec4378a3",
+                            "label": "Heading",
+                            "name": "heading",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_555a3ee9378a4",
+                            "label": "Subheading",
+                            "name": "subheading",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_555a3e6a378a2",
+                            "label": "Display method",
+                            "name": "display_method",
+                            "prefix": "",
+                            "type": "select",
+                            "instructions": "Select how posts should be displayed.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "recent": "Recent posts",
+                                "category": "Selected category",
+                                "custom": "Custom post selection"
+                            },
+                            "default_value": {
+                                "recent": "recent"
+                            },
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "disabled": 0,
+                            "readonly": 0
+                        },
+                        {
+                            "key": "field_555a3f17378a5",
+                            "label": "Posts",
+                            "name": "posts",
+                            "prefix": "",
+                            "type": "post_object",
+                            "instructions": "Select the posts that should be displayed. Note, only the first 2 posts will be displayed.",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_555a3e6a378a2",
+                                        "operator": "==",
+                                        "value": "custom"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "post"
+                            ],
+                            "taxonomy": "",
+                            "allow_null": 0,
+                            "multiple": 1,
+                            "return_format": "object",
+                            "ui": 1
+                        },
+                        {
+                            "key": "field_555a3f75378a6",
+                            "label": "Category",
+                            "name": "category",
+                            "prefix": "",
+                            "type": "taxonomy",
+                            "instructions": "Select category to pull posts from. Two most recent posts will be displayed. ",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_555a3e6a378a2",
+                                        "operator": "==",
+                                        "value": "category"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "category",
+                            "field_type": "select",
+                            "allow_null": 0,
+                            "load_save_terms": 0,
+                            "return_format": "id",
+                            "multiple": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -3059,5 +3203,5 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "modified": 1428005456
+    "modified": 1431977979
 }
