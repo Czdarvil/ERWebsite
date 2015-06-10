@@ -147,3 +147,21 @@ function set_custom_excerpt_length( $length ) {
   return $length;
 }
 add_filter( 'excerpt_length', __NAMESPACE__ . '\\set_custom_excerpt_length', 999 );
+
+//add .current-cat css class to categories of single post in 'categories' widget//
+add_filter('wp_list_categories', __NAMESPACE__ . '\\highlight_single_posts_categories');
+function highlight_single_posts_categories( $output ) {
+  global $post;
+  if ( is_single() ) {
+    $categories = wp_get_post_categories( $post->ID );
+    if ( $categories ) {
+      foreach( $categories as $value ) {
+        if ( preg_match( '#item-' . $value . '">#', $output ) ) {
+          $output = str_replace( 'item-' . $value . '">', 'item-' . $value . ' current-cat">', $output );
+        }
+      }
+    }
+  }
+
+  return $output;
+}
