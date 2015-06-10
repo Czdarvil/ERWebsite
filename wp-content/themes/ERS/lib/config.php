@@ -85,7 +85,13 @@ function page_should_have_sidebar() {
     if ( get_field( 'page_layout' ) == 'left_sidebar' || get_field( 'page_layout' ) == 'right_sidebar' ) {
       return get_field('page_layout');
     } else if ( is_single() && get_post_type() == 'post') {
-      return 'right_sidebar';
+      $posts_page = get_option( 'page_for_posts' );
+      if ($posts_page) {
+        $sidebar_option = get_field( 'page_layout', $posts_page );
+        if ($sidebar_option == 'left_sidebar' || $sidebar_option == 'right_sidebar') {
+          return $sidebar_option;
+        }
+      }
     }
   }
 
@@ -96,21 +102,27 @@ function page_should_have_sidebar() {
   }
 
   // Note is_home() checks if blog posts page, not homepage, yay for semantic function names!
-  if ( is_home() ) {
-    return 'right_sidebar';
+  if ( is_home() || is_archive() || is_search() || is_category() ) {
+    $posts_page = get_option( 'page_for_posts' );
+    if ($posts_page) {
+      $sidebar_option = get_field( 'page_layout', $posts_page );
+      if ($sidebar_option == 'left_sidebar' || $sidebar_option == 'right_sidebar') {
+        return $sidebar_option;
+      }
+    }
   }
   if ( is_single() && get_field('page_layout') == 'default' ) {
-    return 'right_sidebar';
+    return 'left_sidebar';
   }
-  if ( is_search() ) {
-    return 'right_sidebar';
-  }
-  if ( is_archive() ) {
-    return 'right_sidebar';
-  }
-  if ( is_category() ) {
-    return 'right_sidebar';
-  }
+  // if ( is_search() ) {
+  //   return 'right_sidebar';
+  // }
+  // if ( is_archive() ) {
+  //   return 'right_sidebar';
+  // }
+  // if ( is_category() ) {
+  //   return 'right_sidebar';
+  // }
 
   return false;
 }
