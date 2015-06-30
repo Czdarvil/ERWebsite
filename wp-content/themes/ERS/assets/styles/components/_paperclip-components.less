@@ -671,6 +671,21 @@ p {
   background-size: cover;
   box-shadow: 0 -29px 20px -20px rgba(0,0,0,.3) inset;
 }
+.hero-image.post-hero-image {
+  margin-bottom: 60px;
+  height: 50vh;
+  background-attachment: scroll;
+  background-position: center 25%;
+  margin-top: 50px;
+}
+.blog .page-header-wrapper {
+  margin-bottom: 60px;
+}
+@media screen and (min-width: @screen-md-min) {
+  .hero-image.post-hero-image {
+    margin-top: 100px;
+  }
+}
 .b-about-block,
 .intro-block {
   padding: 50px 0 500px;
@@ -926,6 +941,20 @@ p {
 /* ===== Isotope Filters ===== */
 #filters {
   .active-filter a {
+    color: @er-maroon;
+    &:before {
+      content: '\00bb ';
+      font-size: 16px;
+      display: inline-block;
+      line-height: 12px;
+      margin-right: .25em;
+    }
+  }
+}
+
+/* ===== Category Widget ===== */
+.widget_categories {
+  .current-cat a {
     color: @er-maroon;
     &:before {
       content: '\00bb ';
@@ -1808,7 +1837,7 @@ body { // to avoid conflict with the timeline body class
 
 /* ===== Footer & Copyright ===== */
 
-footer {
+footer.content-info {
   margin-top: 50px;
   padding: 30px 0;
   background: @new-gray-dark;
@@ -1840,7 +1869,7 @@ footer {
   padding: 20px 0;
 }
 @media (max-width: @screen-xs-max) {
-  footer {
+  footer.content-info {
     padding-top: 20px;
 
     h4 {

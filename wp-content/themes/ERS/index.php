@@ -1,3 +1,4 @@
+<?php use Roots\Sage\Nav; ?>
 <?php if (!have_posts()) : ?>
   <div class="container">
     <div class="alert alert-warning">
@@ -11,4 +12,4 @@
   <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
 <?php endwhile; ?>
 
-<?php the_posts_navigation(); ?>
+<?php Nav\the_post_pagination_navigation(true); ?>

@@ -133,6 +133,172 @@
             "new_lines": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_5553b6545c144",
+            "label": "Blog",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left"
+        },
+        {
+            "key": "field_5553b6695c145",
+            "label": "Single Posts Use Hero Image",
+            "name": "single_posts_use_hero_image",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "Check to use the featured image as a hero image for single posts. Unchecked displays header-bar with breadcrumbs and if there is a featured image, it appears below the title and post meta.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Display hero image as single post header?",
+            "default_value": 1
+        },
+        {
+            "key": "field_5554cd41fadeb",
+            "label": "Post Excerpt Length",
+            "name": "post_excerpt_length",
+            "prefix": "",
+            "type": "number",
+            "instructions": "Determine the length of the automatic post excerpt in number of words. Excerpts appear in the blog page and archive pages. This option is ignored for manually written excerpts.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 55,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 20,
+            "max": "",
+            "step": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55786dc2bd25e",
+            "label": "Enable Social Widget Script",
+            "name": "enable_social_widget_script",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Turn on social widget options for blog posts",
+            "default_value": 0
+        },
+        {
+            "key": "field_55786df9bd25f",
+            "label": "Social Widget Script",
+            "name": "social_widget_script",
+            "prefix": "",
+            "type": "textarea",
+            "instructions": "Enter the script required to output the social widget. (<em>Use the script block locations to add the base script if needed.<\/em>)",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_55786dc2bd25e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55786d23bd25c",
+            "label": "Posts Archive Social Widget Locations",
+            "name": "posts_archive_social_widget_locations",
+            "prefix": "",
+            "type": "checkbox",
+            "instructions": "Choose where the widget should appear on Posts Archives.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_55786dc2bd25e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "header": "Below Author Info (Above Image)",
+                "footer": "Below Excerpt"
+            },
+            "default_value": {
+                "": ""
+            },
+            "layout": "vertical"
+        },
+        {
+            "key": "field_55786da6bd25d",
+            "label": "Single Post Social Widget Locations",
+            "name": "single_post_social_widget_locations",
+            "prefix": "",
+            "type": "checkbox",
+            "instructions": "Choose where the widget should appear on Single Posts.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_55786dc2bd25e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "header": "Below Author Info",
+                "footer": "Below Content"
+            },
+            "default_value": {
+                "": ""
+            },
+            "layout": "vertical"
         }
     ],
     "location": [
@@ -150,5 +316,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1427927093
+    "modified": 1433956581
 }

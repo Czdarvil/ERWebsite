@@ -17,3 +17,72 @@
   &:extend(.btn all);
   &:extend(.btn-primary all);
 }
+
+.comment-form {
+  textarea {
+    height: auto;
+  }
+  .form-allowed-tags {
+    font-size: .8em;
+  }
+}
+.comment-list {
+  .avatar {
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+  }
+  .comment-content {
+    overflow: hidden;
+  }
+  .comment-body {
+    margin-bottom: 20px;
+  }
+  .comment-respond {
+    &:extend(.well);
+  }
+
+  .comment-content,
+  .reply,
+  .comment-respond {
+    padding-left: 0;
+    margin-left: 70px;
+  }
+  .children {
+    padding: 0;
+    margin-left: 45px;
+    .reply,
+    .comment-content,
+    .comment-respond {
+      margin-left: 45px;
+    }
+    .avatar {
+      width: 35px;
+      height: 35px;
+      margin-right: 10px;
+    }
+  }
+  > li > .children {
+    margin-left: 70px;
+  }
+}
+@media (max-width: 480px) {
+  .comment-list {
+    .avatar {
+      width: 35px;
+      height: 35px;
+      margin-right: 10px;
+    }
+    .children,
+    .comment-respond {
+      padding-left: 0;
+      margin-left: 17px !important;
+    }
+    .reply,
+    .comment-content {
+      clear: both;
+      padding-top: 10px;
+      margin-left: 0 !important;
+    }
+  }
+}
