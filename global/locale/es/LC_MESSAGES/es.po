@@ -1,0 +1,414 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2015-06-19 12:04-0800\n"
+"PO-Revision-Date: 2015-06-19 12:05-0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-Basepath: ../../../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: T_pgettext:1c,2;T_\n"
+"X-Poedit-SearchPath-0: header.php\n"
+"X-Poedit-SearchPath-1: index.php\n"
+"X-Poedit-SearchPath-2: footer.php\n"
+"X-Poedit-SearchPath-3: ./partials\n"
+
+#. TRANSLATORS: Sign up Title
+#: partials/freetrial_form.php:4
+msgid "Sign up today for a free trial"
+msgstr "Regístrese hoy para una prueba gratuita"
+
+#. TRANSLATORS: First Name input label
+#: partials/freetrial_form.php:11
+msgid "First Name"
+msgstr "Nombre"
+
+#. TRANSLATORS: First Name input placeholder
+#: partials/freetrial_form.php:13
+msgctxt "first_name_placeholder"
+msgid "Max"
+msgstr "Máx"
+
+#. TRANSLATORS: Last Name input label
+#: partials/freetrial_form.php:17
+msgid "Last Name"
+msgstr "Apellido"
+
+#. TRANSLATORS: Last Name input placeholder
+#: partials/freetrial_form.php:19
+msgctxt "last_name_placeholder"
+msgid "Mustermann"
+msgstr "Mustermann"
+
+#. TRANSLATORS: Email input label
+#: partials/freetrial_form.php:23
+msgid "Email"
+msgstr "Email"
+
+#. TRANSLATORS: Email input placeholder
+#: partials/freetrial_form.php:25
+msgctxt "email_placeholder"
+msgid "max.mustermann@ffberlin.de"
+msgstr "Max.Mustermann@ffberlin.de"
+
+#. TRANSLATORS: Phone input label
+#: partials/freetrial_form.php:29
+msgid "Phone"
+msgstr "Teléfono"
+
+#. TRANSLATORS: Phone input placeholder
+#: partials/freetrial_form.php:31
+msgctxt "phone_placeholder"
+msgid "optional"
+msgstr "opcional"
+
+#. TRANSLATORS: Country input label
+#: partials/freetrial_form.php:35
+msgid "Country"
+msgstr "País"
+
+#. TRANSLATORS: Country input placehlder
+#: partials/freetrial_form.php:37
+msgctxt "country_placeholder"
+msgid "Germany"
+msgstr "Alemania"
+
+#. TRANSLATORS: Department Name input label
+#: partials/freetrial_form.php:41
+msgid "Department Name"
+msgstr "Nombre del Departamento"
+
+#. TRANSLATORS: Department Name input placeholder
+#: partials/freetrial_form.php:43
+msgctxt "department_name_placeholder"
+msgid "FF Berlin"
+msgstr "FF Berlín"
+
+#. TRANSLATORS: Language Preference selection label
+#: partials/freetrial_form.php:48
+msgid "Language Preference"
+msgstr "Preferencias de idioma"
+
+#. TRANSLATORS: Sign up submit button text
+#: partials/freetrial_form.php:198
+msgctxt "sign_up_form_submit_button"
+msgid "GET FREE TRIAL"
+msgstr "OBTENER PRUEBA GRATUITA"
+
+#. TRANSLATORS: Comment field label
+#: partials/freetrial_form.php:202
+msgid "Comments"
+msgstr "Comentarios"
+
+#. TRANSLATORS: Form validation, required field message
+#: partials/freetrial_form.php:216
+msgid "First name is required."
+msgstr "El nombre es obligatorio."
+
+#. TRANSLATORS: Form validation, required field message
+#: partials/freetrial_form.php:224
+msgid "Last name is required."
+msgstr "El apellido es obligatorio."
+
+#. TRANSLATORS: Form validation, required field message
+#: partials/freetrial_form.php:232
+msgid "Country is required."
+msgstr "El país es obligatorio."
+
+#. TRANSLATORS: Form validation, required field message
+#: partials/freetrial_form.php:240
+msgid "Department name is required."
+msgstr "El nombre del Departamento es obligatorio."
+
+#. TRANSLATORS: Form validation, required field message
+#: partials/freetrial_form.php:248
+msgid "Email is required."
+msgstr "El email es obligatorio."
+
+#. TRANSLATORS: Form validation, invalid field message
+#: partials/freetrial_form.php:252
+msgid "Not a valid email address."
+msgstr "No es un email válido."
+
+#. TRANSLATORS: Language Select Label
+#: partials/language_select.php:3
+msgid "Language"
+msgstr "Idioma"
+
+#. TRANSLATORS: Copyright additional text
+#: footer.php:5
+msgid "All Rights Reserved"
+msgstr "Todos los derechos reservados"
+
+#. TRANSLATORS: Site Meta Description
+#: header.php:7
+msgid ""
+"Emergency Reporting is a Fire & EMS records management company based in "
+"Bellingham, WA USA."
+msgstr ""
+"Emergency Reporting es una empresa de gestión de archivos de Servicios de "
+"Emergencias e Incendios con sede en Bellingham, WA, EEUU."
+
+#. TRANSLATORS: Site Title
+#: header.php:9
+msgid "Emergency Reporting | Home"
+msgstr "Reporte de Emergencias | Inicio"
+
+#. TRANSLATORS: Logo alt text
+#: header.php:30
+msgid "Emergency Reporting"
+msgstr "Reporte de Emergencias"
+
+#. TRANSLATORS: Masthead tagline
+#: header.php:32
+msgid "{Powerful. Mobile. Secure. Global}"
+msgstr "{Poderoso, móvil, seguro, global}"
+
+#. TRANSLATORS: Login Button
+#: header.php:37
+msgid "LOGIN"
+msgstr "INICIAR SESIÓN"
+
+#. TRANSLATORS: Masthead Primary Title
+#: index.php:12
+msgid "Fire Training and Prevention <br> Management just became easier"
+msgstr ""
+"Capacitación y Prevención de Incendios <br> La gestión se volvió más sencilla"
+
+#. TRANSLATORS: Masthead Free Trial Button text
+#: index.php:18
+msgid "FREE TRIAL"
+msgstr "PRUEBA GRATUITA"
+
+#. TRANSLATORS: Masthead learn more link text
+#: index.php:22
+msgid "LEARN MORE"
+msgstr "CONOCER MÁS"
+
+#. TRANSLATORS: Masthead scroll down arrow image alt text
+#: index.php:24
+msgid "scroll down arrow"
+msgstr "flecha para desplazarse hacia abajo"
+
+#. TRANSLATORS: Feature section title
+#: index.php:36
+msgid "Use the web to do more"
+msgstr "Use la web para lograr más"
+
+#. TRANSLATORS: Feature section subtitle
+#: index.php:38
+msgid ""
+"Are you still using paper records to manage training at your fire station?"
+msgstr ""
+"¿Todavía está usando registros en papel para gestionar la capacitación en su "
+"estación de bomberos?"
+
+#. TRANSLATORS: Features section hero image alt text
+#: index.php:44
+msgid "flat-mockup-template"
+msgstr "plantilla-prototipo-plano"
+
+#. TRANSLATORS: Features section title above features row
+#: index.php:50
+msgid "The premier fire prevention management tool is here"
+msgstr ""
+"Aquí tiene la mejor herramienta de gestión para la prevención de incendios"
+
+#. TRANSLATORS: Features section subtitle above features row
+#: index.php:52
+msgid ""
+"Use Emergency Reporting to manage your training and inspection records "
+"online."
+msgstr ""
+"Utilice Emergency Reporting para gestionar online sus registros de "
+"capacitación e inspecciones"
+
+#. TRANSLATORS: Feature 1 icon image alt text
+#. TRANSLATORS: Feature 1 title
+#: index.php:60 index.php:63
+msgid "Complete Inspections"
+msgstr "Completar Inspecciones"
+
+#. TRANSLATORS: Feature 1 body
+#: index.php:65
+msgid ""
+"Schedule routine inspections for buildings in your community, and assign "
+"them to your staff."
+msgstr ""
+"Programar inspecciones de rutina en edificios de su comunidad, y "
+"asignárselas a su personal."
+
+#. TRANSLATORS: Feature 2 icon image alt text
+#. TRANSLATORS: Feature 2 title
+#: index.php:73 index.php:76
+msgid "Assess Risks"
+msgstr "Evalúe los Riesgos"
+
+#. TRANSLATORS: Feature 2 body
+#: index.php:78
+msgid ""
+"Analyze and categorize the risks and hazards in your community with the "
+"power of Google Maps."
+msgstr ""
+"Analice y categorice los riesgos y peligros presentes en su comunidad, con "
+"el poder de Google Maps"
+
+#. TRANSLATORS: Feature 3 icon image alt text
+#. TRANSLATORS: Feature 3 title
+#: index.php:86 index.php:89
+msgid "Schedule Training"
+msgstr "Programe las Capacitaciones"
+
+#. TRANSLATORS: Feature 3 body
+#: index.php:91
+msgid "Schedule classes and upload documents to share with class participants."
+msgstr ""
+"Programe las clases y suba los documentos para ser compartidos con los "
+"participantes."
+
+#. TRANSLATORS: Feature 3 icon image alt text
+#. TRANSLATORS: Feature 3 title
+#: index.php:99 index.php:102
+msgid "Track Progress"
+msgstr "Haga un seguimiento del progreso"
+
+#. TRANSLATORS: Feature 3 body
+#: index.php:104
+msgid "Organize your training program using class and certification templates."
+msgstr ""
+"Organice su programa de capacitación utilizando plantillas para las clases y "
+"los certificados."
+
+#. TRANSLATORS: Testimonials title
+#: index.php:119
+msgid "From our supporters"
+msgstr "La opinión de quienes nos apoyan"
+
+#. TRANSLATORS: Testimonials subtitle
+#: index.php:121
+msgid "Departments stay with us because we care about our customers."
+msgstr ""
+"Los Departamentos  permanecen con nosotros porque nos ocupamos de nuestros "
+"clientes."
+
+#. TRANSLATORS: Testimonial 1 quote
+#: index.php:127
+msgid ""
+"We've been using the system for about a year and a half. Utilizing previous "
+"systems where they didn't want our input, this is a thousand times better... "
+"It's actually taking input from the customer."
+msgstr ""
+"Hemos usado el sistema durante un año y medio. Luego de haber utilizado "
+"sistemas que no tomaban nuestros aportes, éste es mil veces mejor... En "
+"realidad está tomando los aportes del cliente."
+
+#. TRANSLATORS: Testimonial 1 Name
+#: index.php:131
+msgid "Training Lt. Ward Watson"
+msgstr "Training Lt. Ward Watson"
+
+#. TRANSLATORS: Testimonial 1 Credentials
+#: index.php:133
+msgid "Platteville Gilcrest Fire Protection District, Colorado, USA"
+msgstr "Distrito de Bomberos de Platteville Gilcrest, Colorado, USA"
+
+#. TRANSLATORS: Testimonial 2 quote
+#: index.php:140
+msgid ""
+"We were able to come in on time and under budget and get a superior product "
+"that we felt was going to meet our needs. We keep finding more and more "
+"things we can do with this system."
+msgstr ""
+"Hemos logrado sumarnos a tiempo y dentro del presupuesto, y obtuvimos un "
+"buen producto que creíamos se iba adaptar a nuestras necesidades. Pero en "
+"realidad seguimos encontrando más y más cosas que podemos hacer con este "
+"sistema."
+
+#. TRANSLATORS: Testimonial 2 Name
+#: index.php:144
+msgid "Chief John Bales"
+msgstr "Jefe John Bales"
+
+#. TRANSLATORS: Testimonial 2 Credentials
+#: index.php:146
+msgid "Golden Fire Department, Colorado, USA"
+msgstr "Departamento de Bomberos de Golden, Colorado, USA"
+
+#. TRANSLATORS: FAQ section title
+#: index.php:160
+msgid "Frequently Asked Questions"
+msgstr "Preguntas Frecuentes"
+
+#. TRANSLATORS: FAQ 1 Question
+#: index.php:166
+msgid "How does the free trial work?"
+msgstr "¿Cómo funciona la prueba gratuita?"
+
+#. TRANSLATORS: FAQ 1 Answer
+#: index.php:168
+msgid ""
+"If you sign up below, a representative will create a free trial account of "
+"Emergency Reporting that you can use to analyze our system. There is no cost "
+"to evaluate our system."
+msgstr ""
+"Si se da de alta a continuación, uno de nuestros representantes creará una "
+"cuenta de prueba gratuita de Emergency Reporting que podrá usar para evaluar "
+"nuestro sistema sin ningún costo."
+
+#. TRANSLATORS: FAQ 2 Question
+#: index.php:170
+msgid "How long have you been selling internationally?"
+msgstr "¿Cuánto tiempo llevan vendiéndolo de manera internacional?"
+
+#. TRANSLATORS: FAQ 2 Answer
+#: index.php:172
+msgid ""
+"Emergency Reporting has been delivering web-based fire software to the "
+"global market for over six years, and we've been in business since 2003. We "
+"have over 1,500 civilian fire departments and over 150 US Department of "
+"Defense customers, including entire U.S. Marine Corps."
+msgstr ""
+"Desde hace seis años, Emergency Reporting viene ofreciendo al mercado "
+"internacional software basado en la web para departamentos de bomberos, y "
+"estamos en el sector desde el año 2003. Tenemos como clientes a más de 1500 "
+"centrales civiles de bomberos, y más de 150 departamentos de Defensa en "
+"Estados Unidos, incluyendo todo el Cuerpo de la Marina."
+
+#. TRANSLATORS: FAQ 3 Question
+#: index.php:177
+msgid "How secure is your system?"
+msgstr "¿Qué tan seguro es nuestro sistema?"
+
+#. TRANSLATORS: FAQ 3 Answer
+#: index.php:179
+msgid ""
+"The security of your data is our top priority. We back up your data every "
+"five seconds at our World Class, secure data centers using state of the art "
+"equipment and redundancy tactics."
+msgstr ""
+"La seguridad de sus datos es nuestra principal prioridad. Cada cinco "
+"segundos hacemos copia de resguardo de sus datos en nuestros centros de "
+"datos de nivel internacional, utilizando equipamiento con tecnología de "
+"punta y tácticas de redundancia."
+
+#. TRANSLATORS: FAQ 4 Question
+#: index.php:181
+msgid "How much will it cost to use Emergency Reporting at my department?"
+msgstr "¿Cuánto será el costo de usar Emergency Reporting en mi departamento?"
+
+#. TRANSLATORS: FAQ 4 Answer
+#: index.php:183
+msgid ""
+"Emergency Reporting is a 100% web-based solution. You only pay once for your "
+"entire staff/department. You can login to your account from anywhere and "
+"there are no limits to the number of users that can be added to your account."
+msgstr ""
+"Emergency Reporting es una solución 100% basada en la web. Sólo se paga una "
+"vez por todo su equipo/departamento. Puede iniciar sesión en su cuenta desde "
+"cualquier lugar y no hay límites para la cantidad de usuarios que pueden ser "
+"añadidos a su cuenta."
