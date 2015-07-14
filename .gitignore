@@ -34,6 +34,10 @@ wp-content/plugins/*
 !wp-content/plugins/google-analytics-for-wordpress
 !wp-content/plugins/wordpress-seo
 !wp-content/plugins/edit-flow
+!wp-content/plugins/duracelltomi-google-tag-manager
+!wp-content/plugins/force-ssl-url-scheme.phpPermalink.php
+!wp-content/plugins/wordpress-https
+
 
 # Select Themes
 wp-content/themes/*
