@@ -1,7 +1,6 @@
 <?php
 /**
- * @package    WPSEO
- * @subpackage Admin
+ * @package WPSEO\Admin
  */
 
 if ( ! defined( 'WPSEO_VERSION' ) ) {
@@ -34,7 +33,8 @@ if ( '' === $tool_page ) {
 		);
 	}
 
-	echo '<p>', __( 'WordPress SEO by Yoast comes with some very powerful built-in tools:', 'wordpress-seo' ), '</p>';
+	/* translators: %1$s expands to Yoast SEO */
+	echo '<p>', sprintf( __( '%1$s comes with some very powerful built-in tools:', 'wordpress-seo' ), 'Yoast SEO' ), '</p>';
 
 	asort( $tools );
 

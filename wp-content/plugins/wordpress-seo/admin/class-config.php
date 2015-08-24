@@ -1,13 +1,12 @@
 <?php
 /**
- * @package    WPSEO
- * @subpackage Admin
+ * @package WPSEO\Admin
  */
 
 /**
- * class WPSEO_Admin_Pages
+ * Class WPSEO_Admin_Pages
  *
- * Class with functionality for the WP SEO admin pages.
+ * Class with functionality for the Yoast SEO admin pages.
  */
 class WPSEO_Admin_Pages {
 
@@ -61,6 +60,7 @@ class WPSEO_Admin_Pages {
 			'jquery',
 			'jquery-ui-core',
 		), WPSEO_VERSION, true );
+		wp_localize_script( 'wpseo-admin-script', 'wpseoAdminL10n', $this->localize_admin_script() );
 		wp_enqueue_script( 'dashboard' );
 		wp_enqueue_script( 'thickbox' );
 
@@ -96,10 +96,24 @@ class WPSEO_Admin_Pages {
 		);
 	}
 
+	/**
+	 * Pass some variables to js for the admin JS module.
+	 *
+	 * %s is replaced with <code>%s</code> and replaced again in the javascript with the actual variable.
+	 *
+	 * @return  array
+	 */
+	public function localize_admin_script() {
+		return array(
+			/* translators: %s: '%%term_title%%' variable used in titles and meta's template that's not compatible with the given template */
+			'variable_warning' => sprintf( __( 'Warning: the variable %s cannot be used in this template.', 'wordpress-seo' ), '<code>%s</code>' ) . ' ' . __( 'See the help tab for more info.', 'wordpress-seo' ),
+		);
+	}
+
 	/********************** DEPRECATED METHODS **********************/
 
 	/**
-	 * Exports the current site's WP SEO settings.
+	 * Exports the current site's Yoast SEO settings.
 	 *
 	 * @param bool $include_taxonomy Whether to include the taxonomy metadata the plugin creates.
 	 *
@@ -139,7 +153,7 @@ class WPSEO_Admin_Pages {
 	 * @deprecated 2.0
 	 *
 	 * @param bool $submit       Whether or not a submit button and form end tag should be shown.
-	 * @param bool $show_sidebar Whether or not to show the banner sidebar - used by premium plugins to disable it
+	 * @param bool $show_sidebar Whether or not to show the banner sidebar - used by premium plugins to disable it.
 	 */
 	public function admin_footer( $submit = true, $show_sidebar = true ) {
 		_deprecated_function( __METHOD__, 'WPSEO 2.0', 'This method is deprecated, please use the <code>Yoast_Form</code> class.' );
@@ -370,7 +384,7 @@ class WPSEO_Admin_Pages {
 	}
 
 	/**
-	 * Resets the site to the default WordPress SEO settings and runs a title test to check
+	 * Resets the site to the default Yoast SEO settings and runs a title test to check
 	 * whether force rewrite needs to be on.
 	 *
 	 * @deprecated 1.5.0
