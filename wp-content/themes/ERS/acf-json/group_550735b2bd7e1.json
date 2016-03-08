@@ -6,7 +6,6 @@
             "key": "field_550735bb71901",
             "label": "Page Head Type",
             "name": "page_head_type",
-            "prefix": "",
             "type": "select",
             "instructions": "",
             "required": 1,
@@ -37,7 +36,6 @@
             "key": "field_5507368b71902",
             "label": "Title Bar Breadcrumbs",
             "name": "title_bar_breadcrumbs",
-            "prefix": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -62,7 +60,6 @@
             "key": "field_550736dd71903",
             "label": "Hero Image",
             "name": "hero_image",
-            "prefix": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -102,7 +99,6 @@
             "key": "field_55074d7ae605f",
             "label": "Hero Content",
             "name": "full_content",
-            "prefix": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -129,7 +125,6 @@
             "key": "field_5507370971906",
             "label": "Overlay Image",
             "name": "overlay_image",
-            "prefix": "",
             "type": "image",
             "instructions": "Image to lay on top of the background",
             "required": 0,
@@ -162,7 +157,6 @@
             "key": "field_55073e3871907",
             "label": "Slider",
             "name": "slider",
-            "prefix": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -189,7 +183,6 @@
                     "key": "field_55073e4971908",
                     "label": "Background Image",
                     "name": "background_image",
-                    "prefix": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -214,7 +207,6 @@
                     "key": "field_55073e6171909",
                     "label": "Slide Content",
                     "name": "slide_content",
-                    "prefix": "",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -233,7 +225,6 @@
                     "key": "field_55073e6b7190a",
                     "label": "Additional Image",
                     "name": "additional_image",
-                    "prefix": "",
                     "type": "image",
                     "instructions": "Image appears to the right of slide content",
                     "required": 0,
@@ -255,6 +246,22 @@
                     "mime_types": ""
                 }
             ]
+        },
+        {
+            "key": "field_56df5acc91c1c",
+            "label": "Skip Section Link",
+            "name": "skip_section_link",
+            "type": "true_false",
+            "instructions": "Adds a button to the bottom of the section that scrolls to past this section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Add Skip Link",
+            "default_value": 0
         }
     ],
     "location": [
@@ -286,5 +293,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1426713390
+    "active": 1,
+    "description": "",
+    "modified": 1457478415
 }

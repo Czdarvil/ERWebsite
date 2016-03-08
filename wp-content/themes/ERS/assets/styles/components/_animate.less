@@ -1,5 +1,33 @@
-.animated{-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-ms-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}.animated.hinge{-webkit-animation-duration:1s;-moz-animation-duration:1s;-ms-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;}@-webkit-keyframes flash {
-	0%, 50%, 100% {opacity: 1;}	25%, 75% {opacity: 0;}
+.animated {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animated.hinge {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes flash {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  } 25%,
+  75% {
+    opacity: 0;
+  }
 }
 
 @-moz-keyframes flash {
@@ -81,6 +109,34 @@
 	-moz-animation-name: bounce;
 	-o-animation-name: bounce;
 	animation-name: bounce;
+}
+
+@-webkit-keyframes bobbing {
+  0%, 100% {-webkit-transform: translateY(0);}
+  50% {-webkit-transform: translateY(-5px);}
+}
+
+@-moz-keyframes bobbing {
+  0%, 100% {-moz-transform: translateY(0);}
+  50% {-moz-transform: translateY(-5px);}
+}
+
+@-o-keyframes bobbing {
+  0%, 100% {-o-transform: translateY(0);}
+  50% {-o-transform: translateY(-5px);}
+}
+@keyframes bobbing {
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(-5px);}
+}
+
+.bobbing {
+  -webkit-animation-name: bobbing;
+  -moz-animation-name: bobbing;
+  -o-animation-name: bobbing;
+  animation-name: bobbing;
+  animation-duration: 3s;
+  animation-fill-mode: infinite;
 }
 @-webkit-keyframes tada {
 	0% {-webkit-transform: scale(1);}

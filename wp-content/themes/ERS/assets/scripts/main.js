@@ -44,6 +44,27 @@
             }
           }
         });
+
+        $(document).ready(function(){
+          var $skipLinks = $('.js-skip-section');
+          var fixedElements = $('*').filter(function(){
+              return $(this).css("position") === 'fixed';
+          });
+          var topOffset = 0;
+          $.each(fixedElements, function(){
+              if ($(this).position().top < 100) {
+                 topOffset = Math.max(topOffset, $(this).outerHeight());
+              }
+          });
+          $skipLinks.on('click', function(e){
+            var self = this;
+            var $section = $(self).parent();
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: $section.offset().top + $section.outerHeight() - topOffset
+            });
+          });
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

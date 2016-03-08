@@ -19,4 +19,7 @@ $background_img = wp_get_attachment_image_src( get_field('hero_image'), 'full' )
       <img src="<?php echo $overlay[0]; ?>" alt="">
     </div>
   <?php endif; ?>
+  <?php if(get_field( 'skip_section_link' )): ?>
+    <a href="#skip" class="skip-section js-skip-section"><i class="fa fa-angle-down"></i></a>
+  <?php endif; ?>
 </div>
