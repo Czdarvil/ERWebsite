@@ -262,6 +262,29 @@
             },
             "message": "Add Skip Link",
             "default_value": 0
+        },
+        {
+            "key": "field_56e05b1d8d423",
+            "label": "Slide Interval",
+            "name": "slide_interval",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 5000,
+            "placeholder": "",
+            "prepend": "",
+            "append": "ms",
+            "min": 500,
+            "max": "",
+            "step": 500,
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -295,5 +318,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1457478415
+    "modified": 1457544041
 }

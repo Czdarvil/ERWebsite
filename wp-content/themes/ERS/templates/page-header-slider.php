@@ -1,11 +1,11 @@
 <div class="home-slider">
   <!-- Carousel -->
-  <div id="home-slider" class="carousel slide" data-ride="carousel">
+  <div id="hero-slider" class="carousel slide" data-ride="carousel" data-interval="<?php echo get_field('slide_interval') ? : 5000; ?>">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <?php $iteration = 0; ?>
       <?php while ( have_rows('slider') ): the_row(); ?>
-          <li data-target="#home-slider" data-slide-to="<?php echo $iteration; ?>" class="<?php echo $iteration == 0 ? 'active' : ''; ?>"></li>
+          <li data-target="#hero-slider" data-slide-to="<?php echo $iteration; ?>" class="<?php echo $iteration == 0 ? 'active' : ''; ?>"></li>
       <?php
           $iteration++;
         endwhile;
@@ -25,7 +25,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-sm-6">
-                    <div class="home-slider__content">
+                    <div class="hero-slider__content">
                       <?php the_sub_field('slide_content'); ?>
                     </div>
                   </div>
@@ -47,10 +47,10 @@
        ?>
     </div> <!-- / .carousel -->
     <!-- Controls -->
-    <a class="carousel-arrow carousel-arrow-prev" href="#home-slider" data-slide="prev">
+    <a class="carousel-arrow carousel-arrow-prev" href="#hero-slider" data-slide="prev">
       <i class="fa fa-angle-left"></i>
     </a>
-    <a class="carousel-arrow carousel-arrow-next" href="#home-slider" data-slide="next">
+    <a class="carousel-arrow carousel-arrow-next" href="#hero-slider" data-slide="next">
       <i class="fa fa-angle-right"></i>
     </a>
   </div>
