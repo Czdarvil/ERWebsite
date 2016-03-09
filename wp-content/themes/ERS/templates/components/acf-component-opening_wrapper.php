@@ -10,3 +10,6 @@ if ($bg_image) {
 }
 ?>
 <div class="content-wrapper <?php the_sub_field('background_color'); ?>" <?php echo $bg_style; ?>>
+<?php if(get_sub_field('background_wash')): ?>
+  <div class="overlay-wash <?php the_sub_field('background_color'); ?>"></div>
+<?php endif; ?>
