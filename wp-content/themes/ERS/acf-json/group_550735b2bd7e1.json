@@ -154,6 +154,61 @@
             "mime_types": ""
         },
         {
+            "key": "field_56df5acc91c1c",
+            "label": "Skip Section Link",
+            "name": "skip_section_link",
+            "type": "true_false",
+            "instructions": "Adds a button to the bottom of the section that scrolls to past this section.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_550735bb71901",
+                        "operator": "==",
+                        "value": "full"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Add Skip Link",
+            "default_value": 0
+        },
+        {
+            "key": "field_56e05b1d8d423",
+            "label": "Slide Interval",
+            "name": "slide_interval",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_550735bb71901",
+                        "operator": "==",
+                        "value": "slideshow"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 5000,
+            "placeholder": "",
+            "prepend": "",
+            "append": "ms",
+            "min": 500,
+            "max": "",
+            "step": 500,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_55073e3871907",
             "label": "Slider",
             "name": "slider",
@@ -246,45 +301,6 @@
                     "mime_types": ""
                 }
             ]
-        },
-        {
-            "key": "field_56df5acc91c1c",
-            "label": "Skip Section Link",
-            "name": "skip_section_link",
-            "type": "true_false",
-            "instructions": "Adds a button to the bottom of the section that scrolls to past this section.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Add Skip Link",
-            "default_value": 0
-        },
-        {
-            "key": "field_56e05b1d8d423",
-            "label": "Slide Interval",
-            "name": "slide_interval",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 5000,
-            "placeholder": "",
-            "prepend": "",
-            "append": "ms",
-            "min": 500,
-            "max": "",
-            "step": 500,
-            "readonly": 0,
-            "disabled": 0
         }
     ],
     "location": [
@@ -318,5 +334,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1457544041
+    "modified": 1457544262
 }
