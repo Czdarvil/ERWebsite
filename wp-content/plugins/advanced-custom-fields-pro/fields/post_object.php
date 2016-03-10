@@ -75,7 +75,6 @@ class acf_field_post_object extends acf_field {
    		$options = acf_parse_args($options, array(
 			'post_id'		=> 0,
 			's'				=> '',
-			'lang'			=> false,
 			'field_key'		=> '',
 			'paged'			=> 1
 		));
@@ -94,11 +93,9 @@ class acf_field_post_object extends acf_field {
 		// load field
 		$field = acf_get_field( $options['field_key'] );
 		
-		if( !$field ) {
 		
-			return false;
-			
-		}
+		// bail early if no field
+		if( !$field ) return false;
 		
 		
 		// update $args
