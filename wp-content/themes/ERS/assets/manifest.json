@@ -6,6 +6,11 @@
       ],
       "main": true
     },
+    "acf_yoast.js": {
+      "files": [
+        "scripts/acf_yoast.js"
+      ]
+    },
     "main.css": {
       "files": [
         "styles/main.less"
