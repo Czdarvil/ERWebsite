@@ -3,11 +3,12 @@
 Plugin Name: Radio Buttons for Taxonomies
 Plugin URI: http://www.kathyisawesome.com/441/radio-buttons-for-taxonomies
 Description: Use radio buttons for any taxonomy so users can only select 1 term at a time
-Version: 1.7.6
+Version: 1.7.7
 Text Domain: radio-buttons-for-taxonomies
 Author: Kathy Darling
 Author URI: http://www.kathyisawesome.com
 License: GPL2
+Text Domain: radio-buttons-for-taxonomies
 
 Copyright 2015  Kathy Darling  (email: kathy.darling@gmail.com)
 
@@ -23,7 +24,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
 */
 
 /*
@@ -50,7 +50,7 @@ class Radio_Buttons_for_Taxonomies {
 	 * @var version
 	 * @since 1.7.0
 	 */
-	static $version = '1.7.6';
+	static $version = '1.7.7';
 
 	/**
 	 * @var plugin options
@@ -109,7 +109,12 @@ class Radio_Buttons_for_Taxonomies {
 
 			// Include required files
 			include_once( 'inc/class.WordPress_Radio_Taxonomy.php' );
-			include_once( 'inc/class.Walker_Category_Radio.php' );
+			
+			if( ! $this->is_version('4.4.0') ){
+				include_once( 'inc/class.Walker_Category_Radio.php' );
+			} else {
+				include_once( 'inc/class.Walker_Category_Radio_old.php' );
+			}
 
 			$this->options = get_option( 'radio_button_for_taxonomies_options', true );
 
@@ -320,6 +325,21 @@ class Radio_Buttons_for_Taxonomies {
 		return array_unique( $all_taxonomies );
 	}
 
+
+	/**
+	 * Test WordPress current version
+	 *
+	 * @wp-hook mlp_mutually_exclusive_taxonomies
+	 * @param array $version
+	 * @return bool
+	 */
+	public function is_version( $version = '4.4.0' ) {
+		global $wp_version;
+		if ( version_compare( $wp_version, $version, '>=' ) ) {
+			return false;
+		}
+		return true;
+	}
 
 } // end class
 endif;

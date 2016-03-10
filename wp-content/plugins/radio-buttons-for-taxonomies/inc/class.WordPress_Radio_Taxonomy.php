@@ -52,8 +52,11 @@ class WordPress_Radio_Taxonomy {
 		add_filter( 'wp_terms_checklist_args', array( $this, 'filter_terms_checklist_args' ) );
 
 		// Switch ajax callback for adding a non-hierarchical term
-		remove_action( 'wp_ajax_add-' . $taxonomy, '_wp_ajax_add_hierarchical_term' );
-		add_action( 'wp_ajax_add-' . $taxonomy, array( $this, 'add_non_hierarchical_term' ) );
+		if( ! Radio_Buttons_for_Taxonomies()->is_version('4.4.0') ){
+			remove_action( 'wp_ajax_add-' . $taxonomy, '_wp_ajax_add_hierarchical_term' );
+			add_action( 'wp_ajax_add-' . $taxonomy, array( $this, 'add_non_hierarchical_term' ) );			
+		}
+	
 
 		// never save more than 1 term
 		add_action( 'save_post', array( $this, 'save_single_term' ) );
@@ -127,7 +130,7 @@ class WordPress_Radio_Taxonomy {
 		<div id="taxonomy-<?php echo $taxonomy; ?>" class="radio-buttons-for-taxonomies categorydiv form-no-clear">
 			<ul id="<?php echo $taxonomy; ?>-tabs" class="category-tabs">
 				<li class="tabs"><a href="#<?php echo $taxonomy; ?>-all" tabindex="3"><?php echo $this->tax_obj->labels->all_items; ?></a></li>
-				<li class="hide-if-no-js"><a href="#<?php echo $taxonomy; ?>-pop" tabindex="3"><?php _e( 'Most Used' ); ?></a></li>
+				<li class="hide-if-no-js"><a href="#<?php echo $taxonomy; ?>-pop" tabindex="3"><?php _e( 'Most Used' , 'radio-buttons-for-taxonomies' ); ?></a></li>
 			</ul>
 
 			<?php wp_nonce_field( 'radio_nonce-' . $taxonomy, '_radio_nonce-' . $taxonomy ); ?>
