@@ -1,6 +1,6 @@
 <div class="home-slider">
   <!-- Carousel -->
-  <div id="hero-slider" class="carousel slide" data-ride="carousel" data-interval="<?php echo get_field('slide_interval') ? : 5000; ?>">
+  <div id="hero-slider" class="carousel slide" data-ride="carousel" data-interval="<?php echo get_field('slide_interval') > 0 ? get_field('slide_interval') : 'false'; ?>">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <?php $iteration = 0; ?>

@@ -182,7 +182,7 @@
             "label": "Slide Interval",
             "name": "slide_interval",
             "type": "number",
-            "instructions": "",
+            "instructions": "Set the time between slide transitions (in milliseconds). Set to \"0\" (zero) to disable auto play.",
             "required": 0,
             "conditional_logic": [
                 [
@@ -202,7 +202,7 @@
             "placeholder": "",
             "prepend": "",
             "append": "ms",
-            "min": 500,
+            "min": 0,
             "max": "",
             "step": 500,
             "readonly": 0,
@@ -334,5 +334,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1457544262
+    "modified": 1457547841
 }
