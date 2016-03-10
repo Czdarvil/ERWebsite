@@ -277,7 +277,7 @@ class WordPressHTTPS_Module_Core extends Mvied_Plugin_Module {
 	 */
 	public function secure_login( $force_ssl, $post_id = 0, $url = '' ) {
 		if ( $url != '' && $this->getPlugin()->isUrlLocal($url) ) {
-			if ( force_ssl_login() && preg_match('/wp-login\.php$/', $url) === 1 ) {
+			if ( force_ssl_admin() && preg_match('/wp-login\.php$/', $url) === 1 ) {
 				$force_ssl = true;
 			}
 		}
@@ -464,7 +464,7 @@ class WordPressHTTPS_Module_Core extends Mvied_Plugin_Module {
 
 	/**
 	 * Proxy Check
-	 * 
+	 *
 	 * If the server is on a proxy and not correctly reporting HTTPS, this
 	 * JavaScript makes sure that the correct redirect takes place.
 	 *
@@ -484,7 +484,7 @@ class WordPressHTTPS_Module_Core extends Mvied_Plugin_Module {
 
 	/**
 	 * Redirect Check
-	 * 
+	 *
 	 * Checks if the current page needs to be redirected
 	 *
 	 * @param none
@@ -508,7 +508,7 @@ class WordPressHTTPS_Module_Core extends Mvied_Plugin_Module {
 
 	/**
 	 * Add Access-Control-Allow-Origin header to AJAX calls
-	 * 
+	 *
 	 * @param none
 	 * @return void
 	 */
@@ -566,7 +566,7 @@ class WordPressHTTPS_Module_Core extends Mvied_Plugin_Module {
 				$cookie_path_site = str_replace($this->getPlugin()->getHttpsUrl()->getPath(), '', $cookie_path_site);
 				$cookie_path_plugins = str_replace($this->getPlugin()->getHttpsUrl()->getPath(), '', $cookie_path_plugins);
 			}
-			
+
 			if ( $this->getPlugin()->getHttpUrl()->getPath() != '/' ) {
 				$cookie_path = str_replace($this->getPlugin()->getHttpUrl()->getPath(), '', $cookie_path);
 				$cookie_path_site = str_replace($this->getPlugin()->getHttpUrl()->getPath(), '', $cookie_path_site);
@@ -584,7 +584,7 @@ class WordPressHTTPS_Module_Core extends Mvied_Plugin_Module {
 			if ( $cookie_path != $cookie_path_site ) {
 				setcookie($cookie_name, $cookie, $expire, $cookie_path_site, $cookie_domain, $secure, true);
 			}
-		} else {		
+		} else {
 			setcookie($cookie_name, $cookie, $expire, $cookie_path_plugins, $cookie_domain, false, true);
 			setcookie($cookie_name, $cookie, $expire, $cookie_path_admin, $cookie_domain, false, true);
 		}
@@ -625,7 +625,7 @@ class WordPressHTTPS_Module_Core extends Mvied_Plugin_Module {
 			$cookie_path_site = str_replace($this->getPlugin()->getHttpsUrl()->getPath(), '', $cookie_path_site);
 			$cookie_path_plugins = str_replace($this->getPlugin()->getHttpsUrl()->getPath(), '', $cookie_path_plugins);
 		}
-		
+
 		if ( $this->getPlugin()->getHttpUrl()->getPath() != '/' ) {
 			$cookie_path = str_replace($this->getPlugin()->getHttpUrl()->getPath(), '', $cookie_path);
 			$cookie_path_site = str_replace($this->getPlugin()->getHttpUrl()->getPath(), '', $cookie_path_site);
