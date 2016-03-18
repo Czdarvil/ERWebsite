@@ -115,6 +115,98 @@ Last change:    18/02/2015
   .box-shadow(none);
 }
 
+/* ===== Contact Menu ===== */
+.menu-container {
+  background-color: #111;
+}
+.navbar-toggle {
+  padding: 10px;
+  color: #ccc;
+  font-size: 18px;
+  border: none;
+  border-radius: 0;
+  border-color: #3a3a3a !important;
+  background-color: transparent;
+  margin: 0;
+  border-left: 1px solid #3a3a3a;
+  border-right: 1px solid #3a3a3a;
+  width: percentage( 1/3 );
+  &:hover, &:focus, &:active {
+    background-color: transparent !important;
+  }
+}
+.mobile-nav-header {
+  position: relative;
+  a {
+    display: block;
+  }
+  a, button {
+    padding: 8px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+    i {
+      font-size: 18px;
+    }
+    .nav-label {
+      margin-left: 10px;
+    }
+  }
+}
+.contact-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: percentage( 2/3 );
+  float: left;
+  li {
+    display: inline-block;
+  }
+}
+@media (max-width: @grid-float-breakpoint) {
+  .mobile-nav-header {
+    li {
+      width: 50%;
+      float: left;
+    }
+    li a{
+      border-left: 1px solid #3a3a3a;
+      margin-left: -1px;
+    }
+    a, button {
+      font-size: ;
+      color: #ccc;
+      font-weight: lighter;
+      text-align: center;
+      padding: 20px 20px !important;
+    }
+  }
+  .sub-nav {
+    background: #333 !important;
+  }
+}
+@media (min-width: @grid-float-breakpoint ) {
+  .contact-menu {
+    width: auto;
+    position: absolute;
+    top: -50px;
+    right: 110px;
+  }
+}
+@media (max-width: 600px) {
+  .mobile-nav-header {
+    i+.nav-label {
+      display: none;
+    }
+    a, button {
+      padding: 10px 20px !important;
+    }
+  }
+}
+
+
 /* ===== Dropdowns ===== */
 
 @dropdown-border: rgba(0,0,0,.05);
@@ -219,6 +311,7 @@ Last change:    18/02/2015
 }
 .navbar-collapse {
   border-top: 0;
+  box-shadow: none;
 }
 .admin-bar .navbar-fixed-top {
   top: 32px;
@@ -352,8 +445,8 @@ Last change:    18/02/2015
 
 /*** Navbar Toggle ***/
 .navbar-default .navbar-toggle {
-  margin-right: 0;
-  margin-left: 4px;
+  // margin-right: 0;
+  // margin-left: 4px;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
