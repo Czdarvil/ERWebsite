@@ -125,17 +125,6 @@
      * @param {String} yoastContent The page content, to be passed to Yoast
      * @returns {String} The page content with added extra field contents
      */
-    AcfPlugin.prototype.addAcfDataToContent = function (yoastContent) {
-        if (this.content.length === 0) {
-            return yoastContent;
-        }
-        yoastContent += '\n';
-        $.each(this.content, function (key, value) {
-          yoastContent = addSubContent(yoastContent, value);
-        });
-        return yoastContent;
-    };
-
     function addSubContent(yoastContent, subContent) {
       if (typeof subContent === 'object') { // repeater or layout
         $.each(subContent, function(containerKey, containerValue) {
@@ -148,6 +137,17 @@
       }
       return yoastContent;
     }
+
+    AcfPlugin.prototype.addAcfDataToContent = function (yoastContent) {
+        if (this.content.length === 0) {
+            return yoastContent;
+        }
+        yoastContent += '\n';
+        $.each(this.content, function (key, value) {
+          yoastContent = addSubContent(yoastContent, value);
+        });
+        return yoastContent;
+    };
 
     $(window).on('YoastSEO:ready', function () {
         acfPlugin = new AcfPlugin();
