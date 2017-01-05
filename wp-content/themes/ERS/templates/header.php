@@ -1,15 +1,18 @@
 <?php use Roots\Sage\Nav; ?>
 
 <header class="banner navbar navbar-default navbar-fixed-top" role="banner">
-  <div class="top-nav container">
-    <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-      <img alt="<?php bloginfo('name'); ?>" src="<?php echo esc_url( get_theme_mod( 'ers_logo' ) ); ?>">
-    </a>
-    <div class="pull-right">
-      <a href="<?php the_field('login_url', 'options'); ?>" class="navbar-btn btn btn-theme-primary">Login</a>
+  <?php if( isset( $_GET['src'] ) && 'embed' == $_GET['src'] ): ?>
+    <base target="_parent" />
+  <?php else: ?>
+    <div class="top-nav container">
+      <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+        <img alt="<?php bloginfo('name'); ?>" src="<?php echo esc_url( get_theme_mod( 'ers_logo' ) ); ?>">
+      </a>
+      <div class="pull-right">
+        <a href="<?php the_field('login_url', 'options'); ?>" class="navbar-btn btn btn-theme-primary">Login</a>
+      </div>
     </div>
-  </div>
-
+  <?php endif; ?>
   <nav class="menu-container">
     <div class="container mobile-nav-header">
       <?php
