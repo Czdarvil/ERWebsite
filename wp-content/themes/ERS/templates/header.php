@@ -2,16 +2,20 @@
 <?php if( isset( $_GET['src'] ) && 'embed' == $_GET['src'] ):
 /* This is embedded into (presumably) an iframe without the top part of the header. So we need to push down the nav bar AND set all link's target. */ ?>
   <base target='_parent'>
-  <style>
-    header .menu-container {
-      padding-top: 50px;
+  <script type='text/javascript'>
+  (function($) {
+    $(document).ready(function(){
+      set_wrapper_padding();
+    });
+    $(window).on('resize', function() {
+      set_wrapper_padding();
+    });
+    function set_wrapper_padding() {
+      // The hoe-slider element has negative padding, so add that much to the wrapper to keep the slider from up too high
+      $('.page-header-wrapper').css('padding-top', $('.navbar-fixed-top').height() - parseInt($('.home-slider').css('margin-top')));
     }
-    @media (min-width: 992px) {
-      header .menu-container {
-        padding-top: 64px;
-      }
-    }
-  </style>
+  })(jQuery);
+  </script>
 <?php endif; ?>
 <header class="banner navbar navbar-default navbar-fixed-top" role="banner">
   <?php if( ! (isset( $_GET['src'] ) && 'embed' == $_GET['src'] ) ): ?>
